@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 
-
 interface DepartamentCardProps {
   slug: string
   title: string

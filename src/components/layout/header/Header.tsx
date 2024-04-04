@@ -30,7 +30,7 @@ export default function Header() {
   }
   return (
     <header
-      className={`w-full z-30 top-0 ${scrollPosition > 120
+      className={`w-full z-30 top-0 shadow-md ${scrollPosition > 120
         ? 'animate-slideDown bg-white/15 py-5 backdrop-blur-md fixed'
         : 'py-10'
         }`}

@@ -1,4 +1,5 @@
-import JobsList from '@/components/JobsList'
+import Jobs from '@/components/Jobs'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 import getAllDeps from '@/utils/getAllDeps'
 
 type Params = {
@@ -10,7 +11,12 @@ type Params = {
 export default function DepartamentPage({ params }: Params) {
   const { slug } = params
 
-  return <JobsList slug={slug} />
+  return (
+    <div className='container mx-auto mt-7 mb-12'>
+      <Breadcrumb />
+      <Jobs slug={slug} />
+    </div>
+  )
 }
 
 export async function generateStaticParams() {

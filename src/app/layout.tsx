@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import dynamic from 'next/dynamic'
-import { Inter } from "next/font/google"
+import { Onest } from "next/font/google"
 import "./globals.scss"
 import Providers from './providers'
 
-const inter = Inter({ subsets: ["latin"] })
+const onest = Onest({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={onest.className}>
         <Providers>
           <DynamicHeader />
           {children}
