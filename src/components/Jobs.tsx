@@ -20,13 +20,13 @@ const query = qs.stringify({
 })
 
 export default function Jobs({ slug }: JobsProps) {
-  const { data, isFetched } = useQuery({
+  const { data, isFetched, isLoading } = useQuery({
     queryKey: ['jobs'],
     queryFn: async () => instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/departaments/${slug}?${query}`),
     select: data => data.data.data.attributes
   })
 
-  if (!isFetched) return <div>Loading...</div>
+  if (!isFetched || isLoading) return <h2>Loading...</h2>
 
   return (
     <div>
@@ -59,7 +59,7 @@ export default function Jobs({ slug }: JobsProps) {
               </Button>
             </CardBody>
             <CardFooter>
-              <Button variant="outline" target="_blank" href={slug} passHref={true}>
+              <Button variant="outline" href={`/jobs/${job.attributes.slug}`} passHref={true}>
                 Quick apply
               </Button>
             </CardFooter>

@@ -25,7 +25,7 @@ export default function DepartamentList() {
   if (!isFetched) return <div>Loading...</div>
 
   return (
-    <div className='grid grid-cols-3 mt-5'>
+    <div className='grid grid-cols-4 gap-7 mt-5'>
       {data?.map((departament: any) => (
         <DepartamentCard slug={departament.slug} title={departament.title} jobs={departament.jobs} />
       ))}

@@ -8,6 +8,15 @@ type Params = {
   }
 }
 
+export async function generateStaticParams() {
+  const deps = await getAllDeps()
+
+  return deps.data.map((dep: any) => ({
+    slug: dep.attributes.slug,
+  }))
+}
+
+
 export default function DepartamentPage({ params }: Params) {
   const { slug } = params
 
@@ -17,12 +26,4 @@ export default function DepartamentPage({ params }: Params) {
       <Jobs slug={slug} />
     </div>
   )
-}
-
-export async function generateStaticParams() {
-  const deps = await getAllDeps()
-
-  return deps.data.map((dep: any) => ({
-    slug: dep.attributes.slug,
-  }))
 }
