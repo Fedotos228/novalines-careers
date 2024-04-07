@@ -39,7 +39,9 @@ export default function Header() {
                 <Link href="/">
                     <Image
                         src="/logo.svg"
-                        alt="Logo"
+                        alt="logo"
+                        priority
+                        className="aspect-auto"
                         width={logoSizes().width}
                         height={logoSizes().height}
                     />
