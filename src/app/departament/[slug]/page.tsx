@@ -1,29 +1,30 @@
-import Jobs from '@/components/Jobs'
-import Breadcrumb from '@/components/ui/Breadcrumb'
-import getAllDeps from '@/utils/getAllDeps'
+import Jobs from '@/components/Jobs';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import getAllDeps from '@/utils/getAllDeps';
 
 type Params = {
-  params: {
-    slug: string
-  }
-}
+    params: {
+        slug: string;
+    };
+};
 
 export async function generateStaticParams() {
-  const deps = await getAllDeps()
+    const deps = await getAllDeps();
 
-  return deps.data.map((dep: any) => ({
-    slug: dep.attributes.slug,
-  }))
+    return deps.data.map((dep: any) => ({
+        slug: dep.attributes.slug,
+    }));
 }
 
-
 export default function DepartamentPage({ params }: Params) {
-  const { slug } = params
+    const { slug } = params;
 
-  return (
-    <div className='container mx-auto mt-7 mb-12'>
-      <Breadcrumb />
-      <Jobs slug={slug} />
-    </div>
-  )
+    console.log(slug);
+
+    return (
+        <section className="container mx-auto mt-7 mb-12 pt-20 md:pt-28">
+            <Breadcrumb />
+            <Jobs slug={slug} />
+        </section>
+    );
 }
