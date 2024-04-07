@@ -24,7 +24,7 @@ export default function RootLayout({
             <body className={onest.className}>
                 <Providers>
                     <Header />
-                    <main>{children}</main>
+                    <main className="pt-20 md:pt-28">{children}</main>
 
                     <Footer />
                 </Providers>

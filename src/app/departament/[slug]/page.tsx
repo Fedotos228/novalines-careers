@@ -19,10 +19,8 @@ export async function generateStaticParams() {
 export default function DepartamentPage({ params }: Params) {
     const { slug } = params;
 
-    console.log(slug);
-
     return (
-        <section className="container mx-auto mt-7 mb-12 pt-20 md:pt-28">
+        <section className="container mx-auto mt-7 mb-12">
             <Breadcrumb />
             <Jobs slug={slug} />
         </section>
