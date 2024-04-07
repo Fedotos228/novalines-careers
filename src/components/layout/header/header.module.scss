@@ -1,0 +1,34 @@
+.navItem {
+  color: #202020;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+  &:hover {
+      color: #f37021;
+  }
+  @media (max-width: 767px) {
+      color: #202020;
+      font-size: 18px;
+  }
+  &.active {
+      @media (max-width: 767px) {
+          color: #f37021;
+          &::after {
+              display: none;
+          }
+      }
+      &::after {
+          width: 100%;
+      }
+  }
+  &::after {
+      content: '';
+      width: 0;
+      background-color: #f37021;
+      height: 2px;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transition: all 0.3s;
+  }
+}
