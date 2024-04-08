@@ -27,7 +27,7 @@
     }
 
     h1 {
-        @apply relative text-3xl sm:text-5xl font-bold leading-[130%] sm:leading-[120%] max-w-[600px];
+        @apply relative md:text-3xl lg:text-5xl font-bold leading-[130%] sm:leading-[120%] max-w-[600px];
     }
 
     h2 {
