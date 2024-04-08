@@ -1,6 +1,9 @@
 'use client'
 
 import { instance } from '@/api/api.intercepter'
+import Loader from '@/components/Loader'
+import CVForm from '@/components/forms/CVForm'
+import Breadcrumb from '@/components/ui/Breadcrumb'
 import { useQuery } from '@tanstack/react-query'
 
 interface JobSingleProps {
@@ -18,12 +21,11 @@ export default function JobSingle({ params }: JobSingleProps) {
     select: data => data.data.data.attributes
   })
 
-  console.log(job)
-
-  if (!isFetched) return <h2>Loading...</h2>
+  if (isFetched) return <Loader />
 
   return (
-    <>
+    <div className='max-w-[850px] mx-auto mb-12 mt-7'>
+      <Breadcrumb />
       <h1>{job.title}</h1>
       {
         job.description &&
@@ -33,6 +35,7 @@ export default function JobSingle({ params }: JobSingleProps) {
         >
         </div>
       }
-    </>
+      <CVForm title={job.title} />
+    </div>
   )
 }

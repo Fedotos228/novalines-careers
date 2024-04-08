@@ -27,3 +27,12 @@ export interface IButtonProps {
   href?: string
   [key: string]: any
 }
+
+export interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  type: 'text' | 'email' | 'password' | 'number' | 'tel'
+  className?: string
+  label: string
+  id: string
+  required: boolean
+  [key: string]: any
+} 

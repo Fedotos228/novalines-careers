@@ -1,10 +1,12 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function DepartamentCard({ slug, title, jobs }: DepartamentCardProps) {
     return (
         <div className="border border-[#EDEDED] rounded-xl overflow-hidden h-fit">
             <header className="bg-blaze-500 px-6 py-4">
-                <h5 className="text-white">{title}</h5>
+                <Link href={`departament/${slug}`}>
+                    <h5 className="text-white">{title}</h5>
+                </Link>
             </header>
 
             <main className="p-6">
@@ -17,7 +19,7 @@ export default function DepartamentCard({ slug, title, jobs }: DepartamentCardPr
                         <li key={job.attributes.id} className="underline mb-3">
                             <Link
                                 className="text-[#202020] transition-colors duration-300 hover:text-blaze-500"
-                                href={`/job/${slug}`}>
+                                href={`/jobs/${job.attributes.slug}`}>
                                 {job.attributes.title}
                             </Link>
                         </li>
@@ -35,5 +37,5 @@ export default function DepartamentCard({ slug, title, jobs }: DepartamentCardPr
                 </footer>
             )}
         </div>
-    );
+    )
 }

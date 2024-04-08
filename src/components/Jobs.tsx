@@ -1,23 +1,23 @@
-'use client';
+'use client'
 
-import { instance } from '@/api/api.intercepter';
-import { useQuery } from '@tanstack/react-query';
-import qs from 'qs';
-import Button from './ui/Button';
-import { Card, CardBody, CardFooter, CardHeader } from './ui/Card';
+import { instance } from '@/api/api.intercepter'
+import { useQuery } from '@tanstack/react-query'
+import qs from 'qs'
+import Button from './ui/Button'
+import { Card, CardBody, CardFooter, CardHeader } from './ui/Card'
 
 interface JobsProps {
-    slug: string;
+    slug: string
 }
 
 const query = qs.stringify({
-    fields: ['title', 'slug', 'desc'],
+    fields: ['title', 'slug', 'description'],
     populate: {
         jobs: {
             populate: '*',
         },
     },
-});
+})
 
 export default function Jobs({ slug }: JobsProps) {
     const { data, isFetched, isLoading } = useQuery({
@@ -25,9 +25,10 @@ export default function Jobs({ slug }: JobsProps) {
         queryFn: async () =>
             instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/departaments/${slug}?${query}`),
         select: (data) => data.data.data.attributes,
-    });
+    })
 
-    if (!isFetched || isLoading) return <h2>Loading...</h2>;
+    if (!isFetched || isLoading) return <h2>Loading...</h2>
+
 
     return (
         <div>
@@ -35,7 +36,11 @@ export default function Jobs({ slug }: JobsProps) {
                 <h2 className="italic mt-7">{data.title}</h2>
 
                 <div className="mt-3 text-muted-foreground">
-                    <p className="mb-3">{data.desc}</p>
+                    <div
+                        id='departament-description'
+                        dangerouslySetInnerHTML={{ __html: data.description }}
+                        className='my-3'
+                    ></div>
                 </div>
             </div>
             <div className="mt-12 grid gap-7 jobs">
@@ -76,5 +81,5 @@ export default function Jobs({ slug }: JobsProps) {
                 ))}
             </div>
         </div>
-    );
+    )
 }
