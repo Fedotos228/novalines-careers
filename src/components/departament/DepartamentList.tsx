@@ -1,12 +1,13 @@
-'use client'
+'use client';
 
-import { instance } from '@/api/api.intercepter'
-import { useQuery } from '@tanstack/react-query'
-import { Loader2 } from 'lucide-react'
-import qs from 'qs'
-import { useState } from 'react'
-import Button from '../ui/Button'
-import DepartamentCard from './DepartamentCard'
+import { instance } from '@/api/api.intercepter';
+import { useQuery } from '@tanstack/react-query';
+import { Loader2 } from 'lucide-react';
+import qs from 'qs';
+import { useState } from 'react';
+import Button from '../ui/Button';
+import DepartamentCard from './DepartamentCard';
+import Loader from '../elements/Loader';
 
 const query = qs.stringify({
     fields: ['title', 'slug'],
@@ -15,31 +16,31 @@ const query = qs.stringify({
             fields: ['title', 'slug'],
         },
     },
-})
+});
 
 export default function DepartamentList() {
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(false);
     const { data, isFetched } = useQuery({
         queryKey: ['departaments'],
         queryFn: async () =>
             instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/departaments?${query}`),
         select: (data) => data.data.data.map((item: any) => item.attributes),
-    })
+    });
 
-    if (!isFetched) return <div>Loading...</div>
+    if (!isFetched) return <Loader loading={!isFetched} />;
 
     const loadMore = () => {
-        setLoading(true)
-        console.log('Load more')
+        setLoading(true);
+        console.log('Load more');
 
         setTimeout(() => {
-            setLoading(false)
-        }, 1500)
-    }
+            setLoading(false);
+        }, 1500);
+    };
 
     return (
         <>
-            <div className="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5">
+            <div className="grid xs:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-5">
                 {data.map((departament: any) => (
                     <DepartamentCard
                         key={departament.slug}
@@ -56,5 +57,5 @@ export default function DepartamentList() {
                 </Button>
             )}
         </>
-    )
+    );
 }
