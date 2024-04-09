@@ -21,7 +21,7 @@ export default function JobSingle({ params }: JobSingleProps) {
     select: data => data.data.data.attributes
   })
 
-  if (isFetched) return <Loader />
+  if (!isFetched) return <Loader />
 
   return (
     <div className='max-w-[850px] mx-auto mb-12 mt-7'>
