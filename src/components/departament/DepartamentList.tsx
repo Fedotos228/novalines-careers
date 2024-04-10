@@ -40,10 +40,9 @@ export default function DepartamentList() {
 
     return (
         <>
-            <div className="grid xs:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-5">
+            <div className="grid xs:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-5">
                 {data.map((departament: any) => (
                     <DepartamentCard
-                        key={departament.slug}
                         slug={departament.slug}
                         title={departament.title}
                         jobs={departament.jobs}
