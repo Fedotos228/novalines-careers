@@ -3,29 +3,39 @@ import { Card, CardBody, CardFooter, CardHeader } from '../ui/Card'
 
 export default function DepartamentCard({ slug, title, jobs }: DepartamentCardProps) {
     return (
-        <div key={slug} className="border border-[#EDEDED] rounded-xl overflow-hidden h-fit">
-            <header className="bg-blaze-500 px-6 py-4">
-                <Link href={`departament/${slug}`}>
-                    <h5 className="text-white">{title}</h5>
+        <Card className="hover:border-border rounded-xl overflow-hidden h-fit" key={slug}>
+            <CardHeader className="bg-blaze-500 !px-6 !py-4">
+                <Link href={`departament/${slug}`} className="text-xl text-background font-medium">
+                    {title}
                 </Link>
-            </header>
+            </CardHeader>
 
-            <main className="p-6">
-                {jobs.data.slice(0, 2).map((job: any) => (
-                    <div key={job.attributes.id}
-                        className={`${jobs.data.length >= 2 ? 'border-b pb-3 mb-3' : ''} [&:nth-child(2)]:border-b-0 [&:nth-child(2)]:pb-0 [&:nth-child(2)]:mb-0`}
-                    >
-                        <Link
-                            className={`block text-[#202020] transition-colors duration-300 hover:text-blaze-500 mb-2`}
-                            href={`/jobs/${job.attributes.slug}`}>
-                            <h6 className={``}>
+            <CardBody className="!pb-3">
+                <ul>
+                    {jobs.data.slice(0, 2).map((job: any) => (
+                        <li key={job.attributes.id} className="mb-3 border-b last:border-none">
+                            <Link
+                                className="text-foreground transition-colors font-medium duration-300 hover:text-blaze-500"
+                                href={`/jobs/${job.attributes.slug}`}>
                                 {job.attributes.title}
-                            </h6>
-                        </Link>
-                        <p className='text-sm line-clamp-3 text-[#707070] leading-6'>{job.attributes.description}</p>
-                    </div>
-                ))}
-            </main >
-        </div >
+                            </Link>
+                            <p className="text-sm mb-3 mt-1  text-muted-foreground leading-[180%] line-clamp-3 max-h-[83px]">
+                                {job.attributes.description}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            </CardBody>
+
+            {jobs.data.length > 2 && (
+                <CardFooter className="flex justify-end">
+                    <Link
+                        href={`/departament/${slug}`}
+                        className="text-muted-foreground hover:text-gray-900 transition-colors duration-300 underline">
+                        See all jobs
+                    </Link>
+                </CardFooter>
+            )}
+        </Card>
     )
 }
