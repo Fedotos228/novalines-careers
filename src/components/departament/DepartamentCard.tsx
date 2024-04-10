@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function DepartamentCard({ slug, title, jobs }: DepartamentCardProps) {
     return (
-        <div className="border border-[#EDEDED] rounded-xl overflow-hidden h-fit">
+        <div key={slug} className="border border-[#EDEDED] rounded-xl overflow-hidden h-fit">
             <header className="bg-blaze-500 px-6 py-4">
                 <Link href={`departament/${slug}`}>
                     <h5 className="text-white">{title}</h5>
@@ -10,32 +10,21 @@ export default function DepartamentCard({ slug, title, jobs }: DepartamentCardPr
             </header>
 
             <main className="p-6">
-                <p className="text-sm mb-3 pb-3 border-b text-muted-foreground leading-[180%] line-clamp-3 max-h-[83px]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus minima
-                    odit qui tenetur quos nobis esse natus aperiam omnis pariatur.
-                </p>
-                <ul>
-                    {jobs.data.slice(0, 2).map((job: any) => (
-                        <li key={job.attributes.id} className="underline mb-3">
-                            <Link
-                                className="text-[#202020] transition-colors duration-300 hover:text-blaze-500"
-                                href={`/jobs/${job.attributes.slug}`}>
+                {jobs.data.slice(0, 2).map((job: any) => (
+                    <div key={job.attributes.id}
+                        className={`${jobs.data.length >= 2 ? 'border-b pb-3 mb-3' : ''} [&:nth-child(2)]:border-b-0 [&:nth-child(2)]:pb-0 [&:nth-child(2)]:mb-0`}
+                    >
+                        <Link
+                            className={`block text-[#202020] transition-colors duration-300 hover:text-blaze-500 mb-2`}
+                            href={`/jobs/${job.attributes.slug}`}>
+                            <h6 className={``}>
                                 {job.attributes.title}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </main>
-
-            {jobs.data.length > 2 && (
-                <footer className="flex justify-end">
-                    <Link
-                        href={`/departament/${slug}`}
-                        className="text-muted-foreground hover:text-gray-900 transition-colors duration-300 underline px-6 pb-6">
-                        See all jobs
-                    </Link>
-                </footer>
-            )}
-        </div>
+                            </h6>
+                        </Link>
+                        <p className='text-sm line-clamp-3 text-[#707070] leading-6'>{job.attributes.description}</p>
+                    </div>
+                ))}
+            </main >
+        </div >
     )
 }

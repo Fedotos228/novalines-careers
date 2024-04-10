@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
 import qs from 'qs'
 import { useState } from 'react'
+import Loader from '../elements/Loader'
 import Button from '../ui/Button'
 import DepartamentCard from './DepartamentCard'
 
@@ -12,7 +13,7 @@ const query = qs.stringify({
     fields: ['title', 'slug'],
     populate: {
         jobs: {
-            fields: ['title', 'slug'],
+            fields: ['title', 'slug', 'description'],
         },
     },
 })
@@ -26,7 +27,7 @@ export default function DepartamentList() {
         select: (data) => data.data.data.map((item: any) => item.attributes),
     })
 
-    if (!isFetched) return <div>Loading...</div>
+    if (!isFetched) return <Loader />
 
     const loadMore = () => {
         setLoading(true)
@@ -39,7 +40,7 @@ export default function DepartamentList() {
 
     return (
         <>
-            <div className="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5">
+            <div className="grid xs:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
                 {data.map((departament: any) => (
                     <DepartamentCard
                         key={departament.slug}

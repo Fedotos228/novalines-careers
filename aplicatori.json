@@ -1,0 +1,1109 @@
+{
+  "data": [
+    {
+      "id": 3106451,
+      "applicant": {
+        "id": 3642068,
+        "full_name": "Efremov Artemii",
+        "email": "arteom.fotomax@gmail.com",
+        "phone_numbers": [
+          "061190288",
+          "+061190288"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualified_at": null,
+      "created_at": "2024-02-02T10:42:28.091Z",
+      "updated_at": "2024-02-02T10:42:28.162Z"
+    },
+    {
+      "id": 3067130,
+      "applicant": {
+        "id": 3296739,
+        "full_name": "Razmerita Andreea",
+        "email": "andr.razmerita@gmail.com",
+        "phone_numbers": [
+          "079126415"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-25T11:16:51.999Z",
+      "created_at": "2024-01-25T11:12:09.868Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3064427,
+      "applicant": {
+        "id": 3599940,
+        "full_name": "Pirgaru Dumitru",
+        "email": "dumitrupirgaru@gmail.com",
+        "phone_numbers": [
+          "068208224",
+          "+373068208224"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-24T18:23:56.205Z",
+      "created_at": "2024-01-24T18:17:25.656Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3063912,
+      "applicant": {
+        "id": 3599502,
+        "full_name": "Dogvani Iurie",
+        "email": "i.dovgani1987@gmail.com",
+        "phone_numbers": [
+          "067773033"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15704,
+        "name": "Overqualifield"
+      },
+      "disqualified_at": "2024-01-24T16:16:09.986Z",
+      "created_at": "2024-01-24T16:13:59.422Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3063767,
+      "applicant": {
+        "id": 3599383,
+        "full_name": "Rosioru Gheorghe",
+        "email": "gheorgherosioru30@gmail.com",
+        "phone_numbers": [
+          "078593575"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-24T15:58:10.420Z",
+      "created_at": "2024-01-24T15:56:56.413Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3063706,
+      "applicant": {
+        "id": 3599335,
+        "full_name": "Stephy Binu",
+        "email": "stephybinu6464@gmail.com",
+        "phone_numbers": [
+          "067389052"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-24T15:51:02.528Z",
+      "created_at": "2024-01-24T15:49:26.972Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3060560,
+      "applicant": {
+        "id": 3593754,
+        "full_name": "Apostol Viorica",
+        "email": "vioricaapostol4@gmail.com",
+        "phone_numbers": [
+          "061006891"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 16260,
+        "name": "Lack of qualifications for this position but can be suitable for another"
+      },
+      "disqualified_at": "2024-01-24T18:07:42.870Z",
+      "created_at": "2024-01-24T10:16:58.996Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3055177,
+      "applicant": {
+        "id": 3589678,
+        "full_name": "Iapără Ion",
+        "email": "dreamland.club@yahoo.com",
+        "phone_numbers": [
+          "+37360141757"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-23T12:50:07.198Z",
+      "created_at": "2024-01-23T12:48:00.133Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3055131,
+      "applicant": {
+        "id": 3589642,
+        "full_name": "Prescornic Maxim",
+        "email": "prescornic11@gmail.com",
+        "phone_numbers": []
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-23T12:43:13.228Z",
+      "created_at": "2024-01-23T12:42:59.484Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3054398,
+      "applicant": {
+        "id": 3589044,
+        "full_name": "Florea Oleg",
+        "email": "floreaoleg51@gmail.com",
+        "phone_numbers": [
+          "078614205",
+          "+078614205"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-24T12:43:40.957Z",
+      "created_at": "2024-01-23T11:29:07.963Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3053155,
+      "applicant": {
+        "id": 3587962,
+        "full_name": "Daranuta David",
+        "email": "qwerty42069h@gmail.com",
+        "phone_numbers": [
+          "067299933"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-24T12:42:46.583Z",
+      "created_at": "2024-01-23T09:21:44.712Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3050842,
+      "applicant": {
+        "id": 3586018,
+        "full_name": "Secrieru Dragos",
+        "email": "secrieru.dragos2019@cnsm.ro",
+        "phone_numbers": [
+          "+37378434969"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-23T13:14:25.475Z",
+      "created_at": "2024-01-22T17:54:22.332Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3043382,
+      "applicant": {
+        "id": 3579638,
+        "full_name": "Berega Ion",
+        "email": "ionberega120295@gmail.com",
+        "phone_numbers": [
+          "060238836",
+          "+060238836"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-23T13:11:23.724Z",
+      "created_at": "2024-01-20T18:46:57.840Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3042170,
+      "applicant": {
+        "id": 3578613,
+        "full_name": "Popusoi Madalina",
+        "email": "madalinapopusoi094@gmail.com",
+        "phone_numbers": [
+          "+37368693013"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60173,
+        "name": "Called"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-24T12:40:47.699Z",
+      "created_at": "2024-01-19T18:58:57.889Z",
+      "updated_at": "2024-01-24T12:40:47.722Z"
+    },
+    {
+      "id": 3040921,
+      "applicant": {
+        "id": 3339968,
+        "full_name": "Melnic Iulian",
+        "email": "julianmelnic@gmail.com",
+        "phone_numbers": [
+          "069928726",
+          ""
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-22T13:42:07.359Z",
+      "created_at": "2024-01-19T14:22:22.658Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3040074,
+      "applicant": {
+        "id": 3577355,
+        "full_name": "Naziru Vadim",
+        "email": "vadimnaziru@yahoo.com",
+        "phone_numbers": [
+          "068057663"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-19T13:51:20.095Z",
+      "created_at": "2024-01-19T13:48:55.242Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3039980,
+      "applicant": {
+        "id": 3577284,
+        "full_name": "Adarsh Sheeba Kumar",
+        "email": "adarshcheckzz@gmail.com",
+        "phone_numbers": [
+          "+37367823220"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-19T13:47:41.926Z",
+      "created_at": "2024-01-19T13:33:10.655Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3035234,
+      "applicant": {
+        "id": 3574275,
+        "full_name": "Bizdiga Alina",
+        "email": "bizdiga97@mail.ru",
+        "phone_numbers": []
+      },
+      "pipeline_state": {
+        "id": 60173,
+        "name": "Called"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-22T14:19:27.718Z",
+      "created_at": "2024-01-18T17:28:18.096Z",
+      "updated_at": "2024-01-25T12:26:05.359Z"
+    },
+    {
+      "id": 3035215,
+      "applicant": {
+        "id": 3574258,
+        "full_name": "A Ali Muhannad",
+        "email": "samarqand50@yahoo.om",
+        "phone_numbers": [
+          "+37378508395"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-19T14:06:18.150Z",
+      "created_at": "2024-01-18T17:19:01.786Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3035105,
+      "applicant": {
+        "id": 3574172,
+        "full_name": "Paraskeva Alexandros (Alex)",
+        "email": "andros.skeva@gmail.com",
+        "phone_numbers": [
+          "079101968"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60174,
+        "name": "Interviewed"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-22T10:35:46.337Z",
+      "created_at": "2024-01-18T16:55:58.444Z",
+      "updated_at": "2024-01-25T12:24:04.035Z"
+    },
+    {
+      "id": 3034216,
+      "applicant": {
+        "id": 3559180,
+        "full_name": "Muntean Alexei",
+        "email": "alexei.b.muntean@gmail.com",
+        "phone_numbers": [
+          "+37369547652"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-18T15:06:00.891Z",
+      "created_at": "2024-01-18T14:59:32.842Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3029646,
+      "applicant": {
+        "id": 3497222,
+        "full_name": "Munteanu Adrian",
+        "email": "adrian.munteanu13@yahoo.com",
+        "phone_numbers": [
+          "060802000"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-23T10:59:34.924Z",
+      "created_at": "2024-01-17T21:39:15.750Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3029334,
+      "applicant": {
+        "id": 3167466,
+        "full_name": "Kilker Paul",
+        "email": "paul_kilker@hotmail.com",
+        "phone_numbers": [
+          "+37362183318"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-22T14:33:32.605Z",
+      "created_at": "2024-01-17T19:04:28.492Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3029153,
+      "applicant": {
+        "id": 3569177,
+        "full_name": "Lefter Marian",
+        "email": "m07551523007@gmail.com",
+        "phone_numbers": [
+          "079790826",
+          "+07551523007",
+          "+079790826"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-19T17:11:02.417Z",
+      "created_at": "2024-01-17T17:55:02.234Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3027176,
+      "applicant": {
+        "id": 3567631,
+        "full_name": "Tudosan Nicolae",
+        "email": "director.nigond@mail.ru",
+        "phone_numbers": [
+          "+37369161144"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-19T17:06:51.788Z",
+      "created_at": "2024-01-17T13:47:56.917Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3026939,
+      "applicant": {
+        "id": 3567450,
+        "full_name": "Refler Serhii",
+        "email": "serg.refler@gmail.com",
+        "phone_numbers": [
+          "076926356",
+          "+380935696663"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60173,
+        "name": "Called"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-17T13:43:33.772Z",
+      "created_at": "2024-01-17T13:18:24.372Z",
+      "updated_at": "2024-01-25T12:26:05.395Z"
+    },
+    {
+      "id": 3026596,
+      "applicant": {
+        "id": 3411038,
+        "full_name": "Cristea Corina",
+        "email": "cristeax2@gmail.com",
+        "phone_numbers": [
+          "+4407759590941",
+          "060316673"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-19T17:20:32.590Z",
+      "created_at": "2024-01-17T12:37:45.451Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3026488,
+      "applicant": {
+        "id": 3567045,
+        "full_name": "Puscas Delia",
+        "email": "adeliapuscas@gmail.com",
+        "phone_numbers": [
+          "+37376940352"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-19T17:05:38.524Z",
+      "created_at": "2024-01-17T12:27:15.901Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3022908,
+      "applicant": {
+        "id": 3564034,
+        "full_name": "Jardan Serghei",
+        "email": "sergheijardan1@gmail.com",
+        "phone_numbers": [
+          "+069490007"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60174,
+        "name": "Interviewed"
+      },
+      "disqualify_reason": {
+        "id": 17330,
+        "name": "Not the right time"
+      },
+      "disqualified_at": "2024-01-22T10:32:13.265Z",
+      "created_at": "2024-01-16T18:50:16.801Z",
+      "updated_at": "2024-01-25T12:24:04.035Z"
+    },
+    {
+      "id": 3022821,
+      "applicant": {
+        "id": 3563958,
+        "full_name": "Orlioglo Lolita",
+        "email": "lolitabraga25@gmail.com",
+        "phone_numbers": [
+          "+37368394908",
+          "+248249250"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-19T16:53:30.281Z",
+      "created_at": "2024-01-16T18:06:24.185Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3022662,
+      "applicant": {
+        "id": 3563809,
+        "full_name": "Iacubovschii Gheorghii",
+        "email": "yakubovsky.georg@gmail.com",
+        "phone_numbers": [
+          "+37360606715"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-19T16:52:12.739Z",
+      "created_at": "2024-01-16T17:28:21.258Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3021539,
+      "applicant": {
+        "id": 3546242,
+        "full_name": "Lazarev Filip",
+        "email": "palazarev98@gmail.com",
+        "phone_numbers": [
+          "+37368350238"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 17330,
+        "name": "Not the right time"
+      },
+      "disqualified_at": "2024-01-16T14:39:20.253Z",
+      "created_at": "2024-01-16T14:39:15.820Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3021330,
+      "applicant": {
+        "id": 3553477,
+        "full_name": "Korovicheva Anna",
+        "email": "ana.avionica@gmail.com",
+        "phone_numbers": [
+          "+37379324966"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60174,
+        "name": "Interviewed"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-22T10:44:55.549Z",
+      "created_at": "2024-01-16T14:09:35.338Z",
+      "updated_at": "2024-01-25T12:24:04.035Z"
+    },
+    {
+      "id": 3019640,
+      "applicant": {
+        "id": 3166842,
+        "full_name": "Orbu Adrian",
+        "email": "ad101195o@gmail.com",
+        "phone_numbers": [
+          "079791809"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15707,
+        "name": "Red flags"
+      },
+      "disqualified_at": "2024-01-16T11:02:05.794Z",
+      "created_at": "2024-01-16T11:01:59.042Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3019406,
+      "applicant": {
+        "id": 3489448,
+        "full_name": "Loghin Ion",
+        "email": "ionloghin@ymail.com",
+        "phone_numbers": [
+          "068518877",
+          "+37368518877"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-16T10:53:24.317Z",
+      "created_at": "2024-01-16T10:53:19.764Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3016061,
+      "applicant": {
+        "id": 3167503,
+        "full_name": "Gabriel Cervatiuc",
+        "email": "cervatiucg@gmail.com",
+        "phone_numbers": [
+          "+37369650980"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15707,
+        "name": "Red flags"
+      },
+      "disqualified_at": "2024-01-23T10:43:54.985Z",
+      "created_at": "2024-01-15T16:31:12.337Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3013969,
+      "applicant": {
+        "id": 3556785,
+        "full_name": "Ciorba Nichita",
+        "email": "ciorbanikita@mail.ru",
+        "phone_numbers": [
+          "079147789",
+          "+255255255"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60173,
+        "name": "Called"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-19T17:49:03.712Z",
+      "created_at": "2024-01-15T13:07:22.827Z",
+      "updated_at": "2024-01-25T12:26:05.359Z"
+    },
+    {
+      "id": 3011780,
+      "applicant": {
+        "id": 3554738,
+        "full_name": "Cotoman Denis",
+        "email": "d.s.cotoman@gmail.com",
+        "phone_numbers": [
+          "+37368353233"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15703,
+        "name": "Poor interview performance"
+      },
+      "disqualified_at": "2024-01-22T14:01:30.164Z",
+      "created_at": "2024-01-15T09:26:47.336Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 3010342,
+      "applicant": {
+        "id": 3553456,
+        "full_name": "Moisei Andrian",
+        "email": "jarred1336@gmail.com",
+        "phone_numbers": [
+          "060160045"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-19T14:13:16.183Z",
+      "created_at": "2024-01-14T18:24:32.708Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 2999720,
+      "applicant": {
+        "id": 3545058,
+        "full_name": "Solomonov Serghei",
+        "email": "ssolomonov@gmail.com",
+        "phone_numbers": [
+          "079407030",
+          "+37379407030"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-17T14:05:14.486Z",
+      "created_at": "2024-01-11T12:46:53.627Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 2990625,
+      "applicant": {
+        "id": 3509074,
+        "full_name": "Chetrean Doina",
+        "email": "chetreandoina235@gmail.com",
+        "phone_numbers": [
+          "07502748165"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60174,
+        "name": "Interviewed"
+      },
+      "disqualify_reason": {
+        "id": 16260,
+        "name": "Lack of qualifications for this position but can be suitable for another"
+      },
+      "disqualified_at": "2024-01-22T10:47:15.549Z",
+      "created_at": "2024-01-09T15:37:13.896Z",
+      "updated_at": "2024-01-25T12:24:04.035Z"
+    },
+    {
+      "id": 2958637,
+      "applicant": {
+        "id": 3508210,
+        "full_name": "Gusanu Diana",
+        "email": "bydianag@gmail.com",
+        "phone_numbers": [
+          "069345017"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 13868,
+        "name": "Lack of qualifications"
+      },
+      "disqualified_at": "2024-01-04T14:53:18.991Z",
+      "created_at": "2024-01-03T14:12:06.569Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 2946523,
+      "applicant": {
+        "id": 3498352,
+        "full_name": "Dorin",
+        "email": "",
+        "phone_numbers": [
+          "079595697"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15701,
+        "name": "Poor English"
+      },
+      "disqualified_at": "2024-01-10T10:57:54.041Z",
+      "created_at": "2023-12-28T10:46:22.954Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 2943940,
+      "applicant": {
+        "id": 3493883,
+        "full_name": "Cerchez Vasile",
+        "email": "cerchezvasile1996@gmail.com",
+        "phone_numbers": [
+          "060657842"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60174,
+        "name": "Interviewed"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-22T10:40:09.381Z",
+      "created_at": "2023-12-27T13:58:03.432Z",
+      "updated_at": "2024-01-25T12:24:04.035Z"
+    },
+    {
+      "id": 2896362,
+      "applicant": {
+        "id": 3460659,
+        "full_name": "Marjina Ion",
+        "email": "ion.mrj@yahoo.com",
+        "phone_numbers": [
+          "+37360905389"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-17T14:01:36.961Z",
+      "created_at": "2023-12-15T13:15:17.394Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 2869853,
+      "applicant": {
+        "id": 3425876,
+        "full_name": "Snegur Alina",
+        "email": "temcon_design_transport@mail.ru",
+        "phone_numbers": [
+          "069592288"
+        ]
+      },
+      "pipeline_state": {
+        "id": 61267,
+        "name": "CV Screening"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2023-12-08T12:54:03.169Z",
+      "created_at": "2023-12-08T12:24:39.863Z",
+      "updated_at": "2024-01-25T11:53:53.914Z"
+    },
+    {
+      "id": 2860494,
+      "applicant": {
+        "id": 3416903,
+        "full_name": "Stefanuca Alex",
+        "email": "alex.stefanuca@yahoo.fr",
+        "phone_numbers": [
+          "068348010"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60170,
+        "name": "Applied"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2023-12-06T13:59:55.115Z",
+      "created_at": "2023-12-06T13:59:45.316Z",
+      "updated_at": "2024-02-02T10:42:28.154Z"
+    },
+    {
+      "id": 2859589,
+      "applicant": {
+        "id": 3414323,
+        "full_name": "Stanislav Cebotari",
+        "email": "s.yu.cebotari@gmail.com",
+        "phone_numbers": [
+          "+37376007624"
+        ]
+      },
+      "pipeline_state": {
+        "id": 60174,
+        "name": "Interviewed"
+      },
+      "disqualify_reason": {
+        "id": 15702,
+        "name": "No culture fit"
+      },
+      "disqualified_at": "2024-01-22T10:53:37.659Z",
+      "created_at": "2023-12-06T11:56:20.124Z",
+      "updated_at": "2024-01-25T12:24:04.035Z"
+    },
+    {
+      "id": 2830963,
+      "applicant": {
+        "id": 3367551,
+        "full_name": "Ludmila",
+        "email": "",
+        "phone_numbers": [
+          "068205237"
+        ]
+      },
+      "pipeline_state": {
+        "id": 61267,
+        "name": "CV Screening"
+      },
+      "disqualified_at": null,
+      "created_at": "2023-11-29T16:50:35.886Z",
+      "updated_at": "2024-01-25T11:53:53.914Z"
+    },
+    {
+      "id": 2820077,
+      "applicant": {
+        "id": 3360227,
+        "full_name": "Alexandru",
+        "email": "",
+        "phone_numbers": [
+          "068348010"
+        ]
+      },
+      "pipeline_state": {
+        "id": 61267,
+        "name": "CV Screening"
+      },
+      "disqualified_at": null,
+      "created_at": "2023-11-28T10:23:42.910Z",
+      "updated_at": "2024-01-25T11:53:53.914Z"
+    }
+  ],
+  "metadata": {
+    "pagination": {
+      "page": 1,
+      "pages": 26,
+      "count": 1288,
+      "items": 50
+    }
+  }
+}

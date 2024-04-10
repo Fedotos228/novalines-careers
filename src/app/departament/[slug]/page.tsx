@@ -19,9 +19,11 @@ export async function generateStaticParams() {
 export default function DepartamentPage({ params }: Params) {
   const { slug } = params
 
+  const page = slug.replace(/-/g, ' ')
+
   return (
     <section className="container mx-auto mt-7 mb-12">
-      <Breadcrumb />
+      <Breadcrumb page={page} />
       <Jobs slug={slug} />
     </section>
   )

@@ -3,6 +3,7 @@
 import { instance } from '@/api/api.intercepter'
 import { useQuery } from '@tanstack/react-query'
 import qs from 'qs'
+import Loader from './elements/Loader'
 import Button from './ui/Button'
 import { Card, CardBody, CardFooter, CardHeader } from './ui/Card'
 
@@ -27,14 +28,13 @@ export default function Jobs({ slug }: JobsProps) {
         select: (data) => data.data.data.attributes,
     })
 
-    if (!isFetched || isLoading) return <h2>Loading...</h2>
+    if (!isFetched) return <Loader />
 
 
     return (
         <div>
             <div>
                 <h2 className="italic mt-7">{data.title}</h2>
-
                 <div className="mt-3 text-muted-foreground">
                     <div
                         id='departament-description'
@@ -43,31 +43,23 @@ export default function Jobs({ slug }: JobsProps) {
                     ></div>
                 </div>
             </div>
-            <div className="mt-12 grid gap-7 jobs">
+            <div className="mt-12 grid grid-cols-2 gap-7 jobs">
                 {data.jobs.data.map((job: any) => (
                     <Card key={job.attributes.slug}>
                         <CardHeader>
                             <h2 className="text-xl font-semibold text-blaze-500">
                                 {job.attributes.title}
                             </h2>
-                            <p className="text-gray-500 mt-2">{job.attributes.location}</p>
+                            <div className='flex items-center gap-3 mt-2'>
+                                <p className="font-medium">{job.attributes.type}</p>
+                                <span>/</span>
+                                <p className="">English {job.attributes.english}</p>
+                            </div>
                         </CardHeader>
-                        <CardBody>
-                            <ul className="list-disc pl-6 mt-2 text-sm text-secondary flex flex-col gap-2">
-                                {job.attributes.requirements.map((req: any) => (
-                                    <li key={req.id} className="text-gray-500">
-                                        {req.title}
-                                    </li>
-                                ))}
-                            </ul>
-                            <Button
-                                variant="link"
-                                size="custom"
-                                href={slug}
-                                target="_blank"
-                                className="text-sm mt-2">
-                                More info...
-                            </Button>
+                        <CardBody className='h-[215px]'>
+                            <p className='text-[#707070] text-sm leading-6 line-clamp-6'>
+                                {job.attributes.description}
+                            </p>
                         </CardBody>
                         <CardFooter>
                             <Button
