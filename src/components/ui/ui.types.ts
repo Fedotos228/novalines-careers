@@ -1,5 +1,5 @@
 import { FieldError, UseFormRegister } from 'react-hook-form'
-import { ICVFormData, ValidFieldNames } from '../forms/form.types'
+import { CVValidFieldNames, ICVFormData } from '../forms/form.types'
 
 export interface IButtonStyles {
   default: string
@@ -35,7 +35,7 @@ export interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement>
   type: 'text' | 'email' | 'password' | 'number' | 'tel',
   className?: string
   label?: string
-  id: ValidFieldNames
+  id: CVValidFieldNames
   required: boolean
   register: UseFormRegister<ICVFormData>
   error: FieldError | undefined,

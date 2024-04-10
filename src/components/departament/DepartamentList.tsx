@@ -27,7 +27,7 @@ export default function DepartamentList() {
         select: (data) => data.data.data.map((item: any) => item.attributes),
     })
 
-    if (!isFetched) return <Loader />
+    if (!isFetched) return <Loader loading={!isFetched} />
 
     const loadMore = () => {
         setLoading(true)
@@ -40,7 +40,7 @@ export default function DepartamentList() {
 
     return (
         <>
-            <div className="grid xs:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+            <div className="grid xs:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-5">
                 {data.map((departament: any) => (
                     <DepartamentCard
                         key={departament.slug}

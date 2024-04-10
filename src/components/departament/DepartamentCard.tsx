@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Card, CardBody, CardFooter, CardHeader } from '../ui/Card'
 
 export default function DepartamentCard({ slug, title, jobs }: DepartamentCardProps) {
     return (
