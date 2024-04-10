@@ -39,6 +39,5 @@ export interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement>
   required: boolean
   register: UseFormRegister<ICVFormData>
   error: FieldError | undefined,
-  valueAsNumber?: boolean
   [key: string]: any
 } 

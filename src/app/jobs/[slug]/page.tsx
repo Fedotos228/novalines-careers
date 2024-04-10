@@ -24,7 +24,7 @@ export default function JobSingle({ params }: JobSingleProps) {
         select: (data) => data.data.data.attributes,
     })
 
-    if (!isFetched) return <Loader />
+    if (!isFetched) return <Loader loading={isFetched} />
 
     return (
         <div className="container px-4 mx-auto mb-12 mt-7">

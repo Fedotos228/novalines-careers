@@ -2,7 +2,7 @@ export interface ICVFormData {
   firstName: string
   lastName: string
   email: string
-  phone: number
+  phone: string
   position: string
   telegram: string
   file: any

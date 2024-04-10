@@ -2,7 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { FolderOpen } from 'lucide-react'
-import { useForm } from 'react-hook-form'
+import { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import Button from '../ui/Button'
 import { Card, CardBody } from '../ui/Card'
@@ -14,16 +15,13 @@ type Props = {
 }
 
 const MAX_FILE_SIZE = 1024 * 1024 * 10
-const ACCEPTED_FILES_TYPES = ['pdf']
+const ACCEPTED_FILES_TYPES = ['application/pdf']
 
 const CVSchema = z.object({
     firstName: z.string().min(2, { message: 'First name is too short' }),
     lastName: z.string().min(3, { message: 'Last name is too short' }),
     email: z.string().email({ message: ' Valid email' }),
-    phone: z.number({
-        required_error: "required field",
-        invalid_type_error: "Phone is required",
-    }).min(9, { message: 'Insert your phone number' }),
+    phone: z.string().min(9, { message: 'Insert your phone number' }),
     position: z.string().min(2, { message: 'Insert position' }),
     file: z
         .any()
@@ -37,38 +35,23 @@ const CVSchema = z.object({
 
 
 export default function CVForm({ title }: Props) {
+    const [fileName, setFileName] = useState<string | undefined>(undefined)
     const {
         register,
         handleSubmit,
         formState: { errors },
-        setError
     } = useForm<ICVFormData>({
         resolver: zodResolver(CVSchema),
     })
 
-    const onSubmit = async (data: ICVFormData) => {
-        console.log("SUCCESS", data)
-    }
-
-    let content = (
-        <>
-            <FolderOpen className='mx-auto mb-2' />
-            <h6 className='text-center mb-1'>Upload your CV or drag & drop there</h6>
-            <p className='text-center text-sm text-[#707070]'>PDF file size no more than 10MB</p>
-        </>
-    )
-
-
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
-        console.log(file)
-        if (file) {
-            content = (
-                <p className='text-center text-sm text-[#707070]'>
-                    {file.name} <span className='text-blaze-500'>Remove</span>
-                </p>
-            )
-        }
+        setFileName(file?.name)
+    }
+
+    const onSubmit: SubmitHandler<ICVFormData> = data => {
+        debugger
+        console.log(data)
     }
 
     return (
@@ -80,8 +63,8 @@ export default function CVForm({ title }: Props) {
                         id="firstName"
                         label="First Name"
                         required
-                        register={register}
                         error={errors.firstName}
+                        {...register('firstName', { required: true })}
                     />
                     <Input
                         type="text"
@@ -90,6 +73,7 @@ export default function CVForm({ title }: Props) {
                         required
                         register={register}
                         error={errors.lastName}
+                        {...register('lastName', { required: true })}
                     />
                     <Input
                         type="email"
@@ -98,6 +82,7 @@ export default function CVForm({ title }: Props) {
                         required
                         register={register}
                         error={errors.email}
+                        {...register('email', { required: true })}
                     />
                     <Input
                         type="tel"
@@ -106,16 +91,18 @@ export default function CVForm({ title }: Props) {
                         required
                         register={register}
                         error={errors.phone}
+                        {...register('phone', { required: true })}
                     />
                     <Input
                         type="text"
-                        id="Job position"
-                        name="position"
+                        label="Job position"
+                        id="position"
                         required
                         disabled
                         defaultValue={title}
                         register={register}
                         errors={errors.position}
+                        {...register('position', { required: true })}
                     />
                     <Input
                         type="text"
@@ -124,14 +111,20 @@ export default function CVForm({ title }: Props) {
                     />
                     <div className='relative col-span-2 h-28 border rounded-xl'>
                         <div className='absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4'>
-                            {content}
+                            <FolderOpen className='mx-auto mb-2' />
+                            <h6 className='text-center mb-1'>Upload your CV or drag & drop there</h6>
+                            <p className='text-center text-sm text-[#707070]'>
+
+                                {fileName ? fileName : 'PDF file size no more than 10MB'}
+                            </p>
                         </div>
                         <Input
                             type="file"
                             id="file"
                             className="h-full mt-0 appearance-none border-0 opacity-0"
+                            {...register('file', { required: true })}
+                            error={errors.file}
                             onChange={onChange}
-                            register={register}
                         />
                     </div>
                     <Button type="submit" className="xs:col-span-2" variant="primary">

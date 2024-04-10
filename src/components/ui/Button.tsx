@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { IButtonProps, IButtonStyles } from './ui.types';
+import Link from 'next/link'
+import { IButtonProps, IButtonStyles } from './ui.types'
 
 const buttonStyles: IButtonStyles = {
     default:
@@ -22,7 +22,7 @@ const buttonStyles: IButtonStyles = {
         icon: 'h-[72px] w-[72px]',
         custom: '',
     },
-};
+}
 
 export default function Button({
     children,
@@ -45,5 +45,5 @@ export default function Button({
             {...props}>
             {children}
         </Link>
-    );
+    )
 }
