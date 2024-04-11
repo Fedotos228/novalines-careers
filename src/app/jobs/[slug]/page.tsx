@@ -1,15 +1,13 @@
-import JobSingle from './JobSingle'
+import JobSingle from './JobSingle';
 
 interface JobSingleProps {
     params: {
-        slug: string
-    }
+        slug: string;
+    };
 }
 
 export default function JobSinglePage({ params }: JobSingleProps) {
-    const { slug } = params
+    const { slug } = params;
 
-    return (
-        <JobSingle slug={slug} />
-    )
+    return <JobSingle slug={slug} />;
 }
