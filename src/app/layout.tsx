@@ -1,4 +1,5 @@
 import Footer from '@/components/layout/footer/Footer'
+import { DinNextLtProFont } from '@/font'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Onest } from 'next/font/google'
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
     }
 }
 
+
+
 const Header = dynamic(() => import('@/components/layout/header/Header'), { ssr: false })
 
 export default function RootLayout({
@@ -26,7 +29,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={onest.className}>
+            <body className={DinNextLtProFont.className}>
                 <Providers>
                     <Header />
                     <main>{children}</main>
