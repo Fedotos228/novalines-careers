@@ -93,7 +93,6 @@ export default function CVForm({ title }: Props) {
                         type="text"
                         id="firstName"
                         label="First Name"
-                        className="xs:col-span-2"
                         required
                         error={errors.firstName}
                         {...register('firstName', { required: true })}
@@ -102,7 +101,6 @@ export default function CVForm({ title }: Props) {
                         type="text"
                         id="lastName"
                         label="Last Name"
-                        className="xs:col-span-2"
                         required
                         error={errors.lastName}
                         {...register('lastName', { required: true })}
@@ -111,7 +109,6 @@ export default function CVForm({ title }: Props) {
                         type="email"
                         id="email"
                         label="Email"
-                        className="xs:col-span-2"
                         required
                         error={errors.email}
                         {...register('email', { required: true })}
@@ -120,7 +117,6 @@ export default function CVForm({ title }: Props) {
                         type="tel"
                         id="tel"
                         label="Phone number"
-                        className="xs:col-span-2"
                         required
                         error={errors.phone}
                         {...register('phone', { required: true })}
@@ -136,7 +132,7 @@ export default function CVForm({ title }: Props) {
                         {...register('position', { required: true })}
                     />
                     <Input type="text" id="telegram" label="Telegram" />
-                    <div className="relative col-span-2 border py-4 transition-colors  mb-2 duration-300 hover:border-blaze-500 rounded-xl ">
+                    <div className="relative col-span-1 xs:col-span-2 border py-4 transition-colors  mb-2 duration-300 hover:border-blaze-500 rounded-xl ">
                         <div className="flex flex-col items-center justify-center h-full mb-4">
                             <FolderOpen className="mx-auto mb-1" />
                             <h6 className="text-center mb-2">
