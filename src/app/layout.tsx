@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/footer/Footer'
 import { DinNextLtProFont } from '@/font'
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Onest } from 'next/font/google'
@@ -31,7 +32,7 @@ export default function RootLayout({
                 <Providers>
                     <Header />
                     <main>{children}</main>
-
+                    <Analytics />
                     <Footer />
                 </Providers>
             </body>

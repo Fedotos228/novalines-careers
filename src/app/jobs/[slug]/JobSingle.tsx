@@ -6,6 +6,7 @@ import Loader from '@/components/elements/Loader'
 import CVForm from '@/components/forms/CVForm'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import { Card, CardBody, CardFooter, CardHeader } from '@/components/ui/Card'
+import useScreenSize from '@/hooks/useScreenSize'
 import { useQuery } from '@tanstack/react-query'
 
 interface JobSingleProps {
@@ -20,21 +21,23 @@ export default function JobSingle({ slug }: JobSingleProps) {
     select: (data) => data.data.data.attributes,
   })
 
+  const screenSize = useScreenSize()
+
   if (!isFetched) return <Loader loading={isFetched} />
 
   return (
-    <div className="container px-4 mx-auto mb-12 mt-7">
+    <div className="container px-4 mx-auto lg:mb-12 my-7">
       <Breadcrumb className="mb-6" page={job.title as string} />
 
-      <div className="grid gap-5 grid-cols-1 md:grid-cols-[1fr_260px]  lg:grid-cols-[1fr_310px] xl:grid-cols-[1fr_410px] lg:gap-8 relative">
+      <div className="grid gap-5 grid-cols-1 md:grid-cols-[1fr_260px]  lg:grid-cols-[1fr_310px] xl:grid-cols-[1fr_410px]lg:gap-8 relative">
         <div>
-          <Card className=" mb-8 hover:border-border">
+          <Card className="mb-5 lg:mb-8 hover:border-border">
             <CardHeader>
               <h1>{job.title}</h1>
             </CardHeader>
 
             <CardBody>
-              <p className='mt-4'>
+              <p>
                 {job.description}
               </p>
             </CardBody>
@@ -47,14 +50,25 @@ export default function JobSingle({ slug }: JobSingleProps) {
               </p>
             </CardFooter>
           </Card>
+          {screenSize.width <= 767 && (
+            <Aside
+              experience={job.experience}
+              schedule={job.schedule}
+              type={job.type}
+              english={job.english}
+            />
+          )}
           <CVForm title={job.title} />
         </div>
-        <Aside
-          experience={job.experience}
-          schedule={job.schedule}
-          type={job.type}
-          english={job.english}
-        />
+        {screenSize.width > 767 && (
+          <Aside
+            experience={job.experience}
+            schedule={job.schedule}
+            type={job.type}
+            english={job.english}
+          />
+
+        )}
       </div>
     </div>
   )
