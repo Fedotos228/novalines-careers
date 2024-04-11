@@ -12,11 +12,11 @@ export const DinNextLtProFont = localFont({
       style: 'italic',
     },
     {
-      path: '../public/font/DINNEXTLTPRO-Medium.OTF',
+      path: '../public/font/DINNEXTLTPRO-Medium.otf',
       weight: '500',
     },
     {
-      path: '../public/font/DINNEXTLTPRO-Regular.OTF',
+      path: '../public/font/DINNEXTLTPRO-Regular.otf',
       weight: '400',
     },
   ],
