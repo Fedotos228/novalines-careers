@@ -16,7 +16,7 @@ export const DinNextLtProFont = localFont({
       weight: '500',
     },
     {
-      path: '../public/font/DINNEXTLTPRO-Regular.otf',
+      path: '../public//font/DINNEXTLTPRO-Regular.otf',
       weight: '400',
     },
   ],
