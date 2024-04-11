@@ -1,30 +1,31 @@
-'use client'
+'use client';
 
-import { instance } from '@/api/api.intercepter'
-import Aside from '@/components/elements/Aside'
-import Loader from '@/components/elements/Loader'
-import CVForm from '@/components/forms/CVForm'
-import Breadcrumb from '@/components/ui/Breadcrumb'
-import { Card, CardBody, CardFooter, CardHeader } from '@/components/ui/Card'
-import { useQuery } from '@tanstack/react-query'
+import { instance } from '@/api/api.intercepter';
+import Aside from '@/components/elements/Aside';
+import Loader from '@/components/elements/Loader';
+import CVForm from '@/components/forms/CVForm';
+import Breadcrumb from '@/components/ui/Breadcrumb';
+import { Card, CardBody, CardFooter, CardHeader } from '@/components/ui/Card';
+import { useQuery } from '@tanstack/react-query';
+import { useEffect } from 'react';
 
 interface JobSingleProps {
     params: {
-        slug: string
-    }
+        slug: string;
+    };
 }
 
 export default function JobSingle({ params }: JobSingleProps) {
-    const { slug } = params
+    const { slug } = params;
 
     const { data: job, isFetched } = useQuery({
         queryKey: ['job'],
         queryFn: async () =>
             instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/jobs/${slug}?populate=*`),
         select: (data) => data.data.data.attributes,
-    })
+    });
 
-    if (!isFetched) return <Loader loading={isFetched} />
+    if (!isFetched) return <Loader loading={isFetched} />;
 
     return (
         <div className="container px-4 mx-auto mb-12 mt-7">
@@ -38,9 +39,7 @@ export default function JobSingle({ params }: JobSingleProps) {
                         </CardHeader>
 
                         <CardBody>
-                            <p className='mt-4'>
-                                {job.description}
-                            </p>
+                            <p className="mt-4">{job.description}</p>
                         </CardBody>
 
                         <CardFooter>
@@ -61,7 +60,7 @@ export default function JobSingle({ params }: JobSingleProps) {
                 />
             </div>
         </div>
-    )
+    );
 }
 
 // ! LASA ASTA AICI PENTRU CA O SA FIE FOLOSIT
