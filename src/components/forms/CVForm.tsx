@@ -95,7 +95,6 @@ export default function CVForm({ title }: Props) {
                         id="lastName"
                         label="Last Name"
                         required
-                        register={register}
                         error={errors.lastName}
                         {...register('lastName', { required: true })}
                     />
@@ -104,7 +103,6 @@ export default function CVForm({ title }: Props) {
                         id="email"
                         label="Email"
                         required
-                        register={register}
                         error={errors.email}
                         {...register('email', { required: true })}
                     />
@@ -113,17 +111,16 @@ export default function CVForm({ title }: Props) {
                         id="tel"
                         label="Phone number"
                         required
-                        register={register}
                         error={errors.phone}
                         {...register('phone', { required: true })}
                     />
                     <Input
                         type="text"
                         label="Job position"
+                        className="pointer-events-none"
                         id="position"
                         required
                         value={title}
-                        register={register}
                         error={errors.position}
                         {...register('position', { required: true })}
                     />
