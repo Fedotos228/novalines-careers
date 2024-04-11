@@ -6,7 +6,7 @@ export default function Jobs() {
       <h1 className='text-center italic max-w-full mb-1'>
         There is no job opening available now
       </h1>
-      <p className='text-[#707070]'>Don`&apos;`t worry, your candidacy counts! Follow us and maybe a new position will appear soon. </p>
+      <p className='text-[#707070]'>Don&apos;t worry, your candidacy counts! Follow us and maybe a new position will appear soon. </p>
       <Button href='/' variant="default" className='mt-6 uppercase'>
         return to main page
       </Button>
