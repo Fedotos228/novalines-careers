@@ -28,11 +28,10 @@ export default function Footer() {
                             <Image
                                 src="/insta.svg"
                                 alt='Instagram'
-                                width={25}
-                                height={25}
+                                width={30}
+                                height={30}
                             />
                         </Link>
-                        <span>/</span>
                         <Link
                             href="https://www.facebook.com/NovaLines/"
                             target="_blank"
@@ -40,11 +39,10 @@ export default function Footer() {
                             <Image
                                 src="/facebook.svg"
                                 alt='Instagram'
-                                width={25}
-                                height={25}
+                                width={30}
+                                height={30}
                             />
                         </Link>
-                        <span>/</span>
                         <Link
                             href="https://www.linkedin.com/company/nova-lines/"
                             target="_blank"
@@ -52,8 +50,8 @@ export default function Footer() {
                             <Image
                                 src="/linkedin.svg"
                                 alt='Instagram'
-                                width={25}
-                                height={25}
+                                width={30}
+                                height={30}
                             />
                         </Link>
                     </div>
