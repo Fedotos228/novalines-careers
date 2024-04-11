@@ -1,8 +1,8 @@
 import Footer from '@/components/layout/footer/Footer'
+import { DinNextLtProFont } from '@/font'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Onest } from 'next/font/google'
-import localFont from 'next/font/local'
 import './globals.scss'
 import Providers from './providers'
 
@@ -18,28 +18,7 @@ export const metadata: Metadata = {
     }
 }
 
-const DinNextLtProFont = localFont({
-    src: [
-        {
-            path: '../../public/font/DINNEXTLTPRO-Bolt.otf',
-            weight: '700',
-        },
-        {
-            path: '../../public//font/DINNEXTLTPRO-BoltItalic.otf',
-            weight: '700',
-            style: 'italic',
-        },
-        {
-            path: '../../public/font/DINNEXTLTPRO-Medium.otf',
-            weight: '500',
-        },
-        {
-            path: '../../public/font/DINNEXTLTPRO-Regular.otf',
-            weight: '400',
-        },
-    ],
-    variable: '--font-din-next-lt-pro',
-})
+
 
 const Header = dynamic(() => import('@/components/layout/header/Header'), { ssr: false })
 
