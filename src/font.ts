@@ -3,20 +3,20 @@ import localFont from 'next/font/local'
 export const DinNextLtProFont = localFont({
   src: [
     {
-      path: 'font/DINNEXTLTPRO-BOLD.otf',
+      path: '../public/font/DINNEXTLTPRO-Bolt.otf',
       weight: '700',
     },
     {
-      path: 'font/DINNEXTLTPRO-BOLDITALIC.otf',
+      path: '../public/font/DINNEXTLTPRO-BoltItalic.otf',
       weight: '700',
       style: 'italic',
     },
     {
-      path: 'font/DINNEXTLTPRO-MEDIUM.otf',
+      path: '../public/font/DINNEXTLTPRO-Medium.otf',
       weight: '500',
     },
     {
-      path: 'font/DINNEXTLTPRO-REGULAR.otf',
+      path: '../public/font/DINNEXTLTPRO-Regular.otf',
       weight: '400',
     },
   ],
