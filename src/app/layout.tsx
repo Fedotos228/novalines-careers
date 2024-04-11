@@ -18,8 +18,6 @@ export const metadata: Metadata = {
     }
 }
 
-
-
 const Header = dynamic(() => import('@/components/layout/header/Header'), { ssr: false })
 
 export default function RootLayout({
