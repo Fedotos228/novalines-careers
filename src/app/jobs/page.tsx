@@ -1,15 +1,56 @@
-import Button from '@/components/ui/Button'
+'use client'
 
-export default function Jobs() {
+import { instance } from '@/api/api.intercepter'
+import Loader from '@/components/elements/Loader'
+import Button from '@/components/ui/Button'
+import { Card, CardBody, CardFooter, CardHeader } from '@/components/ui/Card'
+import { useQuery } from '@tanstack/react-query'
+import qs from 'qs'
+
+const query = qs.stringify({
+  fields: ['title', 'slug', 'description', 'type', 'english'],
+})
+
+export default function JobsPage() {
+  const { data: jobs, isFetched } = useQuery({
+    queryKey: ['all jobbs'],
+    queryFn: async () => instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/jobs?${query}`),
+    select: (data) => data.data.data,
+  })
+
+  if (!isFetched) return <Loader loading={isFetched} />
+
   return (
-    <div className='container mx-auto flex items-center justify-center flex-col h-[90vh]'>
-      <h1 className='text-center italic max-w-full mb-1'>
-        There is no job opening available now
-      </h1>
-      <p className='text-[#707070]'>Don&apos;t worry, your candidacy counts! Follow us and maybe a new position will appear soon. </p>
-      <Button href='/' variant="default" className='mt-6 uppercase'>
-        return to main page
-      </Button>
+    <div className='container mx-auto mb-7'>
+      <div className="mt-12 grid grid-cols-2 gap-7 jobs">
+        {jobs.map((job: any) => (
+          <Card key={job.attributes.slug}>
+            <CardHeader>
+              <h2 className="text-xl font-semibold text-blaze-500">
+                {job.attributes.title}
+              </h2>
+              <div className='flex items-center gap-3 mt-2'>
+                <p className="font-medium">{job.attributes.type}</p>
+                <span>/</span>
+                <p className="">English {job.attributes.english}</p>
+              </div>
+            </CardHeader>
+            <CardBody className='h-[215px]'>
+              <p className='text-[#707070] text-sm leading-6 line-clamp-6'>
+                {job.attributes.description}
+              </p>
+            </CardBody>
+            <CardFooter>
+              <Button
+                variant="outline"
+                href={`/jobs/${job.attributes.slug}`}
+                passHref={true}>
+                Quick apply
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
     </div>
   )
 }
