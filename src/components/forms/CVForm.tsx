@@ -1,7 +1,10 @@
 'use client'
 
+import { options } from '@/api/api.helper'
 import { zodResolver } from "@hookform/resolvers/zod"
-import { FolderOpen } from 'lucide-react'
+import { useMutation } from '@tanstack/react-query'
+import axios from 'axios'
+import { FolderOpen, Loader2 } from 'lucide-react'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -33,8 +36,18 @@ const CVSchema = z.object({
         ),
 })
 
-
 export default function CVForm({ title }: Props) {
+    const { mutate, error, isSuccess, isPending } = useMutation({
+        mutationKey: ['cv'],
+        mutationFn: async (formData: FormData) => axios.post(`${process.env.NEXT_PUBLIC_HRM_URL}/recruitment/candidates`, formData, options),
+        onSuccess: (data) => {
+            console.log(data)
+        },
+        onError: (error) => {
+            console.log(error)
+        }
+    })
+
     const [fileName, setFileName] = useState<string | undefined>(undefined)
     const {
         register,
@@ -50,8 +63,19 @@ export default function CVForm({ title }: Props) {
     }
 
     const onSubmit: SubmitHandler<ICVFormData> = data => {
-        debugger
-        console.log(data)
+        const formData = new FormData()
+
+        formData.append('full_name', `${data.firstName} ${data.lastName}`)
+        formData.append('email', data.email)
+        formData.append('position', data.position)
+        formData.append('phone_numbers[]', data.phone)
+        formData.append('telegram_username', data.telegram)
+
+        if (data.file && data.file.length > 0) {
+            formData.append('resume', data.file[0])
+        }
+
+        mutate(formData)
     }
 
     return (
@@ -86,7 +110,7 @@ export default function CVForm({ title }: Props) {
                     />
                     <Input
                         type="tel"
-                        id="email"
+                        id="tel"
                         label="Phone number"
                         required
                         register={register}
@@ -98,10 +122,9 @@ export default function CVForm({ title }: Props) {
                         label="Job position"
                         id="position"
                         required
-                        disabled
-                        defaultValue={title}
+                        value={title}
                         register={register}
-                        errors={errors.position}
+                        error={errors.position}
                         {...register('position', { required: true })}
                     />
                     <Input
@@ -128,9 +151,14 @@ export default function CVForm({ title }: Props) {
                         />
                     </div>
                     <Button type="submit" className="xs:col-span-2" variant="primary">
-                        {/* <Loader2 size={20} className="animate-spin" /> Sending */}
-                        Send CV
+                        {isPending ? (
+                            <><Loader2 size={20} className="animate-spin" /> Sending</>
+                        ) : (
+                            'Send CV'
+                        )}
                     </Button>
+                    {error && <p className="text-red-500 text-sm">This resume already exists</p>}
+                    {isSuccess && <p className="text-green-500 text-sm">Your CV has been sent successfully</p>}
                 </form>
             </CardBody>
         </Card>
