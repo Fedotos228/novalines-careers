@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import { Card, CardBody, CardFooter, CardHeader } from '../ui/Card'
 
@@ -5,8 +6,9 @@ export default function DepartamentCard({ slug, title, jobs }: DepartamentCardPr
     return (
         <Card className="hover:border-border rounded-xl overflow-hidden h-fit">
             <CardHeader className="bg-blaze-500 !px-6 !py-4">
-                <Link href={`departament/${slug}`} className="text-xl text-background font-medium">
+                <Link href={`departament/${slug}`} className="departament-title flex items-center justify-between text-xl text-background font-medium">
                     {title}
+                    <ChevronRight />
                 </Link>
             </CardHeader>
 

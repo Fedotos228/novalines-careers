@@ -1,6 +1,6 @@
-import Map from '@/components/elements/Map';
-import Link from 'next/link';
-import React from 'react';
+import Map from '@/components/elements/Map'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
@@ -22,24 +22,39 @@ export default function Footer() {
                     <h2>Social</h2>
                     <div className="flex items-center gap-1 justify-evenly text-muted mt-2 text-sm lg:text-base">
                         <Link
-                            href="https://www.instagram.com/whhroo/"
+                            href="https://www.instagram.com/drivefornovalines"
                             target="_blank"
-                            className="underline hover:text-blaze-500 transition-colors duration-300">
-                            Instagram
+                            className="block">
+                            <Image
+                                src="/insta.svg"
+                                alt='Instagram'
+                                width={25}
+                                height={25}
+                            />
                         </Link>
                         <span>/</span>
                         <Link
-                            href="https://www.facebook.com/petru.orbu.1"
+                            href="https://www.facebook.com/NovaLines/"
                             target="_blank"
-                            className="underline hover:text-blaze-500 transition-colors duration-300">
-                            Facebook
+                            className="block">
+                            <Image
+                                src="/facebook.svg"
+                                alt='Instagram'
+                                width={25}
+                                height={25}
+                            />
                         </Link>
                         <span>/</span>
                         <Link
-                            href="https://www.linkedin.com/in/whhroo/"
+                            href="https://www.linkedin.com/company/nova-lines/"
                             target="_blank"
-                            className="underline hover:text-blaze-500 transition-colors duration-300">
-                            LinkedIn
+                            className="block">
+                            <Image
+                                src="/linkedin.svg"
+                                alt='Instagram'
+                                width={25}
+                                height={25}
+                            />
                         </Link>
                     </div>
                 </div>
@@ -55,5 +70,5 @@ export default function Footer() {
             </div>
             <Map />
         </footer>
-    );
+    )
 }

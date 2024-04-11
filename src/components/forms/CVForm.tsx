@@ -1,7 +1,10 @@
 'use client';
 
+import { options } from '@/api/api.helper';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { FolderOpen } from 'lucide-react';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
+import { FolderOpen, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -34,7 +37,23 @@ const CVSchema = z.object({
 });
 
 export default function CVForm({ title }: Props) {
-    // const [fileName, setFileName] = useState<string | undefined>(undefined);
+    const { mutate, error, isSuccess, isPending } = useMutation({
+        mutationKey: ['cv'],
+        mutationFn: async (formData: FormData) =>
+            axios.post(
+                `${process.env.NEXT_PUBLIC_HRM_URL}/recruitment/candidates`,
+                formData,
+                options,
+            ),
+        onSuccess: (data) => {
+            console.log(data);
+        },
+        onError: (error) => {
+            console.log(error);
+        },
+    });
+
+    const [fileName, setFileName] = useState<string | undefined>(undefined);
     const {
         register,
         handleSubmit,
@@ -43,12 +62,26 @@ export default function CVForm({ title }: Props) {
         resolver: zodResolver(CVSchema),
     });
 
-    // const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     const file = e.target.files?.[0];
-    //     setFileName(file?.name);
-    // };
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        setFileName(file?.name);
+    };
 
-    const onSubmit: SubmitHandler<ICVFormData> = (data) => console.log(data);
+    const onSubmit: SubmitHandler<ICVFormData> = (data) => {
+        const formData = new FormData();
+
+        formData.append('full_name', `${data.firstName} ${data.lastName}`);
+        formData.append('email', data.email);
+        formData.append('position', data.position);
+        formData.append('phone_numbers[]', data.phone);
+        formData.append('telegram_username', data.telegram);
+
+        if (data.file && data.file.length > 0) {
+            formData.append('resume', data.file[0]);
+        }
+
+        mutate(formData);
+    };
 
     return (
         <Card className="rounded-xl hover:border-border">
@@ -69,7 +102,6 @@ export default function CVForm({ title }: Props) {
                         id="lastName"
                         label="Last Name"
                         required
-                        register={register}
                         error={errors.lastName}
                         {...register('lastName', { required: true })}
                     />
@@ -78,32 +110,29 @@ export default function CVForm({ title }: Props) {
                         id="email"
                         label="Email"
                         required
-                        register={register}
                         error={errors.email}
                         {...register('email', { required: true })}
                     />
                     <Input
                         type="tel"
-                        id="email"
+                        id="tel"
                         label="Phone number"
                         required
-                        register={register}
                         error={errors.phone}
                         {...register('phone', { required: true })}
                     />
                     <Input
                         type="text"
                         label="Job position"
+                        className="!pointer-events-none caret-white focus-visible:border-border opacity-70 bg-gray-100"
                         id="position"
                         required
-                        disabled
-                        defaultValue={title}
-                        register={register}
-                        errors={errors.position}
+                        value={title}
+                        error={errors.position}
                         {...register('position', { required: true })}
                     />
                     <Input type="text" id="telegram" label="Telegram" />
-                    {/* <div className="relative col-span-2 border py-4 transition-colors  mb-2 duration-300 hover:border-blaze-500 rounded-xl ">
+                    <div className="relative col-span-2 border py-4 transition-colors  mb-2 duration-300 hover:border-blaze-500 rounded-xl ">
                         <div className="flex flex-col items-center justify-center h-full mb-4">
                             <FolderOpen className="mx-auto mb-1" />
                             <h6 className="text-center mb-2">
@@ -122,11 +151,20 @@ export default function CVForm({ title }: Props) {
                             error={errors.file}
                             onChange={onChange}
                         />
-                    </div> */}
+                    </div>
                     <Button type="submit" className="xs:col-span-2" variant="primary">
-                        {/* <Loader2 size={20} className="animate-spin" /> Sending */}
-                        Send CV
+                        {isPending ? (
+                            <>
+                                <Loader2 size={20} className="animate-spin" /> Sending
+                            </>
+                        ) : (
+                            'Send CV'
+                        )}
                     </Button>
+                    {error && <p className="text-red-500 text-sm">This resume already exists</p>}
+                    {isSuccess && (
+                        <p className="text-green-500 text-sm">Your CV has been sent successfully</p>
+                    )}
                 </form>
             </CardBody>
         </Card>
