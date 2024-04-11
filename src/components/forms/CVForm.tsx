@@ -86,6 +86,7 @@ export default function CVForm({ title }: Props) {
                         type="text"
                         id="firstName"
                         label="First Name"
+                        className="xs:col-span-2"
                         required
                         error={errors.firstName}
                         {...register('firstName', { required: true })}
@@ -94,6 +95,7 @@ export default function CVForm({ title }: Props) {
                         type="text"
                         id="lastName"
                         label="Last Name"
+                        className="xs:col-span-2"
                         required
                         error={errors.lastName}
                         {...register('lastName', { required: true })}
@@ -102,6 +104,7 @@ export default function CVForm({ title }: Props) {
                         type="email"
                         id="email"
                         label="Email"
+                        className="xs:col-span-2"
                         required
                         error={errors.email}
                         {...register('email', { required: true })}
@@ -110,6 +113,7 @@ export default function CVForm({ title }: Props) {
                         type="tel"
                         id="tel"
                         label="Phone number"
+                        className="xs:col-span-2"
                         required
                         error={errors.phone}
                         {...register('phone', { required: true })}
@@ -117,7 +121,7 @@ export default function CVForm({ title }: Props) {
                     <Input
                         type="text"
                         label="Job position"
-                        className="pointer-events-none"
+                        className="pointer-events-none xs:col-span-2"
                         id="position"
                         required
                         value={title}
