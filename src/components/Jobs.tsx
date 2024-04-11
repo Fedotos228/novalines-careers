@@ -28,8 +28,7 @@ export default function Jobs({ slug }: JobsProps) {
         select: (data) => data.data.data.attributes,
     })
 
-    if (!isFetched) return <Loader />
-
+    if (!isFetched) return <Loader loading={isFetched} />
 
     return (
         <div>

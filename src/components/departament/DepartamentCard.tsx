@@ -3,7 +3,7 @@ import { Card, CardBody, CardFooter, CardHeader } from '../ui/Card'
 
 export default function DepartamentCard({ slug, title, jobs }: DepartamentCardProps) {
     return (
-        <Card className="hover:border-border rounded-xl overflow-hidden h-fit" key={slug}>
+        <Card className="hover:border-border rounded-xl overflow-hidden h-fit">
             <CardHeader className="bg-blaze-500 !px-6 !py-4">
                 <Link href={`departament/${slug}`} className="text-xl text-background font-medium">
                     {title}
@@ -27,7 +27,7 @@ export default function DepartamentCard({ slug, title, jobs }: DepartamentCardPr
                 </ul>
             </CardBody>
 
-            {jobs.data.length > 2 && (
+            {jobs.data.length > 3 && (
                 <CardFooter className="flex justify-end">
                     <Link
                         href={`/departament/${slug}`}
