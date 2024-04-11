@@ -22,7 +22,7 @@ export default function Footer() {
                     <h2>Social</h2>
                     <div className="flex items-center gap-1 justify-evenly text-muted mt-2 text-sm lg:text-base">
                         <Link
-                            href="https://www.instagram.com/drivefornovalines"
+                            href="https://www.instagram.com/novalines.operations.center?igsh=eXo2NTFyZWFnemYy"
                             target="_blank"
                             className="block">
                             <Image
@@ -33,7 +33,7 @@ export default function Footer() {
                             />
                         </Link>
                         <Link
-                            href="https://www.facebook.com/NovaLines/"
+                            href="https://www.facebook.com/NovaLinesOPSCenter"
                             target="_blank"
                             className="block">
                             <Image
