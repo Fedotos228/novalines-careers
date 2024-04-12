@@ -33,7 +33,7 @@ export default function Navigation() {
 
             {screenSizes.width <= 767 && (
                 <nav
-                    className={`fixed top-0 -right-96 bottom-0 max-w-96 w-full bg-white transition-all duration-300 ${menuOpen ? '!right-0' : ''
+                    className={`fixed top-0 -right-96 bottom-0 max-w-96 w-full !bg-white transition-all duration-300 ${menuOpen ? '!right-0' : ''
                         }`}>
                     <button onClick={() => setMenuOpen(false)}>
                         <XIcon className="absolute w-7 h-7 top-5 right-5" />
