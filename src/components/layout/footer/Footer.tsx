@@ -8,19 +8,19 @@ export default function Footer() {
             <div className="bg-foreground flex flex-col gap-12 md:gap-0 md:flex-row items-center justify-evenly text-white py-16">
                 <div className="text-center">
                     <h2>Call</h2>
-                    <p className="text-muted mt-2 text-sm lg:text-base">+373 22 85 85 85</p>
+                    <Link href="tel:+373 22 85 85 85" className="text-muted mt-2 text-sm lg:text-base">+373 22 85 85 85</Link>
                 </div>
 
                 <div className="text-center">
                     <h2>Visit</h2>
-                    <p className="text-muted mt-2 text-sm lg:text-base">
+                    <Link href="https://maps.app.goo.gl/HyvwkPGZSW75mVy98" className="text-muted mt-2 text-sm lg:text-base">
                         bd. Decebal 6, Chișinău, Moldova
-                    </p>
+                    </Link>
                 </div>
 
                 <div className="text-center">
                     <h2>Social</h2>
-                    <div className="flex items-center gap-1 justify-evenly text-muted mt-2 text-sm lg:text-base">
+                    <div className="flex items-center gap-2 justify-evenly text-muted mt-2 text-sm lg:text-base">
                         <Link
                             href="https://www.instagram.com/novalines.operations.center?igsh=eXo2NTFyZWFnemYy"
                             target="_blank"

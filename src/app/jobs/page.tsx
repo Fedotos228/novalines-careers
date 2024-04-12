@@ -21,7 +21,7 @@ export default function JobsPage() {
   if (!isFetched) return <Loader loading={isFetched} />
 
   return (
-    <div className='container mx-auto mb-7'>
+    <div className='container mx-auto mb-7 p-4'>
       <div className="mt-12 grid grid-cols-2 gap-7 jobs">
         {jobs.map((job: any) => (
           <Card key={job.attributes.slug}>
