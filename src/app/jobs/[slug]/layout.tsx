@@ -1,23 +1,23 @@
-import { getJobBySlug } from '@/utils/getJobBySlug';
+import { getJobBySlug } from '@/utils/getJobBySlug'
 
 type JobbsSinglePropsType = {
     params: {
-        slug: string;
-    };
-};
+        slug: string
+    }
+}
 
 export async function generateMetadata({ params }: JobbsSinglePropsType) {
-    const { slug } = params;
+    const { slug } = params
 
-    const jobsData = await getJobBySlug(slug);
-    const job = jobsData.data.attributes;
+    const jobsData = await getJobBySlug(slug)
+    const job = jobsData.data.attributes
 
     return {
-        title: job.title,
+        title: `${job.title} | Cariere Novalines`,
         description: job.description,
-    };
+    }
 }
 
 export default function JobsSingleLayout({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+    return <>{children}</>
 }

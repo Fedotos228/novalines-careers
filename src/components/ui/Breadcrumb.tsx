@@ -4,7 +4,7 @@ export default function Breadcrumb({ page, className }: { page: string; classNam
     return (
         <div className={`${className ? className : ''} uppercase flex gap-3`}>
             <Link
-                href={'/'}
+                href={'/departaments'}
                 className="transition-colors hover:text-blaze-500 hover:underline underline-offset-4">
                 Departments
             </Link>

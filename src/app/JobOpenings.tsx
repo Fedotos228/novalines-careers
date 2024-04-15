@@ -11,7 +11,7 @@ const query = qs.stringify({
   fields: ['title', 'slug', 'description', 'type', 'english'],
 })
 
-export default function JobsPage() {
+export default function JobOpenings() {
   const { data: jobs, isFetched } = useQuery({
     queryKey: ['all jobbs'],
     queryFn: async () => instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/jobs?${query}`),

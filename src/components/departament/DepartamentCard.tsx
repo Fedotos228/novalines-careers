@@ -6,7 +6,7 @@ export default function DepartamentCard({ slug, title, jobs }: DepartamentCardPr
     return (
         <Card className="hover:border-border rounded-xl overflow-hidden h-fit">
             <CardHeader className="bg-blaze-500 !px-6 !py-4">
-                <Link href={`departament/${slug}`} className="departament-title flex items-center justify-between text-xl text-background font-medium">
+                <Link href={`departaments/${slug}`} className="departament-title flex items-center justify-between text-xl text-background font-medium">
                     {title}
                     <ChevronRight />
                 </Link>
@@ -32,7 +32,7 @@ export default function DepartamentCard({ slug, title, jobs }: DepartamentCardPr
             {jobs.data.length > 3 && (
                 <CardFooter className="flex justify-end">
                     <Link
-                        href={`/departament/${slug}`}
+                        href={`/departaments/${slug}`}
                         className="text-muted-foreground hover:text-gray-900 transition-colors duration-300 underline">
                         See all jobs
                     </Link>

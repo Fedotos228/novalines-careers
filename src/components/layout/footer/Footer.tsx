@@ -20,7 +20,8 @@ export default function Footer() {
 
                 <div className="text-center">
                     <h2>Social</h2>
-                    <div className="flex items-center gap-3 justify-evenly text-muted mt-2 text-sm lg:text-base">
+                    <div className="flex items-center gap-3 
+ justify-evenly text-muted mt-2 text-sm lg:text-base">
                         <Link
                             href="https://www.instagram.com/novalines.operations.center?igsh=eXo2NTFyZWFnemYy"
                             target="_blank"

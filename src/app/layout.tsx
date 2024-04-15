@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     icons: {
         icon: ['/favicons/favicon.ico', '/favicons/favicon-16x16.png', '/favicons/favicon-32x32.png'],
         apple: ['/favicons/apple-touch-icon.png', '/favicons/safari-pinned-tab.svg'],
-
     }
 }
 

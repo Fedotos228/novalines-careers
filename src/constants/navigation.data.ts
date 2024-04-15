@@ -1,14 +1,14 @@
 export const navigation = [
   {
     id: 1,
-    title: 'Departments',
+    title: 'Job Openings',
     href: '/'
   },
   {
     id: 2,
-    title: 'Job Openings',
-    href: '/jobs'
-  }
+    title: 'Departments',
+    href: '/departaments'
+  },
 ]
 
 
