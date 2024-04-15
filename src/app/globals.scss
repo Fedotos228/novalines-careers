@@ -58,6 +58,18 @@
         @apply relative text-sm sm:text-base font-medium leading-[130%] sm:leading-[120%] max-w-[600px];
     }
 
+    .hero {
+        &::after{
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 1;
+        }
+    }
+
     .jobs{
         grid-template-columns: repeat(auto-fit, minmax(495px, 1fr));
         @media (max-width: 1024px) {

@@ -1,7 +1,11 @@
+import { Hero } from '@/components/elements/Hero'
 import JobOpenings from './JobOpenings'
 
 export default function Home() {
     return (
-        <JobOpenings />
+        <div>
+            <Hero />
+            <JobOpenings />
+        </div>
     )
 }
