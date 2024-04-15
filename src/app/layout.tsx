@@ -1,13 +1,11 @@
 import Footer from '@/components/layout/footer/Footer'
 import { DinNextLtProFont } from '@/font'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
-import { Onest } from 'next/font/google'
 import './globals.scss'
 import Providers from './providers'
-
-const onest = Onest({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
 
 export const metadata: Metadata = {
     title: 'Cariere Novalines',
@@ -32,9 +30,10 @@ export default function RootLayout({
                 <Providers>
                     <Header />
                     <main>{children}</main>
-                    <Analytics />
                     <Footer />
                 </Providers>
+                <Analytics />
+                <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
             </body>
         </html>
     )
