@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: DepartamentSinglePropsType) {
   return {
     title: `${dep.title} | Cariere Novalines`,
     description: dep.description,
+    keywords: dep.title
   }
 }
 

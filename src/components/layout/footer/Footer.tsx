@@ -1,6 +1,10 @@
 import Map from '@/components/elements/Map'
+import { Onest } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
+
+
+const onest = Onest({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
 
 export default function Footer() {
     return (
@@ -68,6 +72,14 @@ export default function Footer() {
                 </div>
             </div>
             <Map />
+            <div className={`${onest.className} flex items-center justify-center flex-wrap gap-5 sm:gap-20 bg-[#202020] py-7 px-4`} >
+                <p className='text-white opacity-50'>
+                    Copyright © 2024. All rights reserved.
+                </p>
+                <p className='text-white'>
+                    <span className='opacity-50'>Website by</span> <a href="https://www.linkedin.com/company/stellar-solutions-md/" className='transition-colors hover:text-blaze-500'>Stellar Solutions</a>
+                </p>
+            </div>
         </footer>
     )
 }
