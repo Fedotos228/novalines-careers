@@ -21,13 +21,13 @@ export const metadata: Metadata = {
         url: 'https://cariere.novalines.md/',
         images: [
             {
-                url: '/public/LogotypeWhite.png',
+                url: '/LogotypeWhite.png',
                 width: 800,
                 height: 500,
                 alt: 'Novalines White Logo',
             },
             {
-                url: '/public/LogotypeOrange.png',
+                url: '/LogotypeOrange.png',
                 width: 800,
                 height: 500,
                 alt: 'Novalines Orange Logo',
