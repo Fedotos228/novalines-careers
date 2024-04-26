@@ -14,7 +14,7 @@ interface JobSingleProps {
 }
 
 export default function JobSingle({ slug }: JobSingleProps) {
-  const { data: job, isFetched } = useQuery({
+  const { data: job, isFetching, isLoading } = useQuery({
     queryKey: ['job'],
     queryFn: async () =>
       instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/jobs/${slug}?populate=*`),
@@ -23,7 +23,9 @@ export default function JobSingle({ slug }: JobSingleProps) {
 
   const screenSize = useScreenSize()
 
-  if (!isFetched) return <Loader loading={isFetched} />
+  const loading = isFetching || isLoading
+
+  if (loading) return <Loader loading={loading} />
 
   return (
     <div className="container px-4 mx-auto lg:mb-12 my-7">

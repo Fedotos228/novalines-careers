@@ -21,14 +21,16 @@ const query = qs.stringify({
 })
 
 export default function Jobs({ slug }: JobsProps) {
-    const { data, isFetched, isLoading } = useQuery({
+    const { data, isFetching, isLoading } = useQuery({
         queryKey: ['jobs'],
         queryFn: async () =>
             instance.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/departaments/${slug}?${query}`),
         select: (data) => data.data.data.attributes,
     })
 
-    if (!isFetched) return <Loader loading={isFetched} />
+    const loading = isFetching || isLoading
+
+    if (loading) return <Loader loading={loading} />
 
     return (
         <div>
