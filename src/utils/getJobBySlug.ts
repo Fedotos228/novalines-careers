@@ -1,12 +1,16 @@
+import { notFound } from 'next/navigation'
 import qs from 'qs'
 
 const query = qs.stringify({
-  fields: ['title', 'description']
+	fields: ['title', 'description'],
 })
 
 export async function getJobBySlug(slug: string) {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/jobs/${slug}?${query}`)
-  if (!data.ok) throw new Error("Failed to fetch data")
+	const data = await fetch(
+		`${process.env.NEXT_PUBLIC_STRAPI_URL}/jobs/${slug}?${query}`,
+	)
 
-  return data.json()
+	if (!data.ok) notFound()
+
+	return data.json()
 }
