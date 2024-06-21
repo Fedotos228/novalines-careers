@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/admin/:path*",
+      "destination": "https://api.novalines.com/admin/:path*"
+    },
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://api.novalines.com/uploads/:path*"
+    }
+  ]
+}
