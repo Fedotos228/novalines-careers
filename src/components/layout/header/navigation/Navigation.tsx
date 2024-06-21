@@ -54,14 +54,11 @@ export default function Navigation() {
                 </nav>
             )}
 
-            <div className="flex gap-3 lg:gap-4">
-                {/* <Language /> */}
-                {screenSizes.width <= 767 && (
-                    <button onClick={() => setMenuOpen(true)}>
-                        <MenuIcon className="text-foreground w-8 h-8 ml-2 cursor-pointer" />
-                    </button>
-                )}
-            </div>
+            {screenSizes.width <= 767 && (
+                <button onClick={() => setMenuOpen(true)}>
+                    <MenuIcon className="text-foreground w-8 h-8 ml-2 cursor-pointer" />
+                </button>
+            )}
         </>
     )
 }
