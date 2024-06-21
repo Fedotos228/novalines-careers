@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/admin/:path*",
-      "destination": "https://api.novalines.com/admin/:path*"
+      "destination": "https://api.novalines.md/admin/:path*"
     },
     {
       "source": "/uploads/:path*",
-      "destination": "https://api.novalines.com/uploads/:path*"
+      "destination": "https://api.novalines.md/uploads/:path*"
     }
   ]
 }
