@@ -1,5 +1,6 @@
 'use client'
 
+import Button from '@/components/ui/Button'
 import { navigation } from '@/constants/navigation.data'
 import useScreenSize from '@/hooks/useScreenSize'
 import { MenuIcon, XIcon } from 'lucide-react'
@@ -50,6 +51,11 @@ export default function Navigation() {
                                 {item.title}
                             </Link>
                         ))}
+                        {screenSizes.width <= 767 && (
+                            <Button href="https://docs.google.com/forms/d/1I2vbf5TsXpcfzDK6t_NZbkVDdmfGxF7627DymL3Z2WE/edit?ts=6675847f">
+                                Apply Now!
+                            </Button>
+                        )}
                     </div>
                 </nav>
             )}

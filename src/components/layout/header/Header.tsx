@@ -1,5 +1,6 @@
 'use client'
 
+import Button from '@/components/ui/Button'
 import useScreenSize from '@/hooks/useScreenSize'
 import useScrollPosition from '@/hooks/useScrollPosition'
 import Image from 'next/image'
@@ -44,9 +45,11 @@ export default function Header() {
                     />
                 </Link>
                 <Navigation />
-                {/* <Button href="/">
-                    Apply Now!
-                </Button> */}
+                {screenSizes.width >= 767 && (
+                    <Button href="https://docs.google.com/forms/d/1I2vbf5TsXpcfzDK6t_NZbkVDdmfGxF7627DymL3Z2WE/edit?ts=6675847f">
+                        Apply Now!
+                    </Button>
+                )}
             </div>
         </header>
     )
