@@ -22,8 +22,10 @@ export async function generateMetadata({ params }: Props) {
     if (!job) return {}
 
     return {
-        title: `Apply: ${job.title} | Cariere Novalines`,
-        description: `Apply for the ${job.title} position at Nova Lines.`,
+        title: `Apply: ${job.title}`,
+        description: `Apply for the ${job.title} position at the Nova Lines office in Chicago, IL.`,
+        // The job page is the one that should rank; the form page only duplicates it.
+        robots: { index: false, follow: true },
     }
 }
 

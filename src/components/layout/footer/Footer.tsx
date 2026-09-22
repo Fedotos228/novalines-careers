@@ -11,13 +11,13 @@ export default function Footer() {
             <div className="bg-foreground flex flex-col gap-12 md:gap-0 md:flex-row items-center justify-evenly text-white py-16">
                 <div className="text-center">
                     <h2>Call</h2>
-                    <Link href="tel:+373 22 85 85 85" className="text-muted mt-2 text-sm lg:text-base">+373 22 85 85 85</Link>
+                    <Link href="tel:(847) 881-0432" className="text-muted mt-2 text-sm lg:text-base">(847) 881-0432</Link>
                 </div>
 
                 <div className="text-center">
                     <h2>Visit</h2>
                     <Link href="https://maps.app.goo.gl/HyvwkPGZSW75mVy98" className="text-muted mt-2 text-sm lg:text-base">
-                        bd. Decebal 6, Chișinău, Moldova
+                        8535 S. 77th Ave, Bridgeview, IL 60455
                     </Link>
                 </div>
 
@@ -26,7 +26,7 @@ export default function Footer() {
                     <div className="flex items-center gap-3 
  justify-evenly text-muted mt-2 text-sm lg:text-base">
                         <Link
-                            href="https://www.instagram.com/novalines.operations.center?igsh=eXo2NTFyZWFnemYy"
+                            href="https://www.instagram.com/drivefornovalines/"
                             target="_blank"
                             className="block">
                             <Image
@@ -37,22 +37,11 @@ export default function Footer() {
                             />
                         </Link>
                         <Link
-                            href="https://www.facebook.com/NovaLinesOPSCenter"
+                            href="https://www.facebook.com/NovaLines/"
                             target="_blank"
                             className="block">
                             <Image
                                 src="/facebook.svg"
-                                alt='Instagram'
-                                width={30}
-                                height={30}
-                            />
-                        </Link>
-                        <Link
-                            href="https://www.linkedin.com/company/nova-lines/"
-                            target="_blank"
-                            className="block">
-                            <Image
-                                src="/linkedin.svg"
                                 alt='Instagram'
                                 width={30}
                                 height={30}
@@ -71,12 +60,6 @@ export default function Footer() {
                 </div>
             </div>
             <div className={`${onest.className} flex items-center justify-center flex-wrap gap-5 sm:gap-20 bg-[#202020] py-7 px-4`} >
-                <p className='text-white opacity-50'>
-                    Copyright © 2024. All rights reserved.
-                </p>
-                <p className='text-white'>
-                    <span className='opacity-50'>Website by</span> <a href="https://www.linkedin.com/company/stellar-solutions-md/" className='transition-colors hover:text-blaze-500'>Stellar Solutions</a>
-                </p>
             </div>
         </footer>
     )
