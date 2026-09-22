@@ -3,21 +3,15 @@ const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
+  },
+  // The site is fully static: block any fetch/XHR/WebSocket or iframe to another origin.
+  async headers() {
+    return [
       {
-        protocol: 'http',
-        hostname: '127.0.0.1',
-        port: '1337',
+        source: '/:path*',
+        headers: [{ key: 'Content-Security-Policy', value: "connect-src 'self'; frame-src 'none'" }],
       },
-      {
-        protocol: 'https',
-        hostname: 'novalines-cms-dc8718f109d2.herokuapp.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-      },
-    ],
+    ]
   },
 }
 

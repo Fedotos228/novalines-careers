@@ -1,13 +1,14 @@
 'use client'
 
 import Button from '@/components/ui/Button'
+import { APPLY_FORM_URL } from '@/constants/links'
 import { navigation } from '@/constants/navigation.data'
 import useScreenSize from '@/hooks/useScreenSize'
 import { MenuIcon, XIcon } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import styles from '../header.module.scss'
+import styles from '../header.module.css'
 import { INavItems } from './navigation.types'
 
 export default function Navigation() {
@@ -52,7 +53,7 @@ export default function Navigation() {
                             </Link>
                         ))}
                         {screenSizes.width <= 767 && (
-                            <Button href="https://docs.google.com/forms/d/1I2vbf5TsXpcfzDK6t_NZbkVDdmfGxF7627DymL3Z2WE/edit?ts=6675847f">
+                            <Button href={APPLY_FORM_URL}>
                                 Apply Now!
                             </Button>
                         )}

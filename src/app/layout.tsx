@@ -1,11 +1,8 @@
 import Footer from '@/components/layout/footer/Footer'
+import Header from '@/components/layout/header/HeaderDynamic'
 import { DinNextLtProFont } from '@/font'
-import { GoogleAnalytics } from '@next/third-parties/google'
-import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
-import './globals.scss'
-import Providers from './providers'
+import './globals.css'
 
 export const metadata: Metadata = {
     title: 'Cariere Novalines',
@@ -37,8 +34,6 @@ export const metadata: Metadata = {
     }
 }
 
-const Header = dynamic(() => import('@/components/layout/header/Header'), { ssr: false })
-
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -47,13 +42,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={DinNextLtProFont.className}>
-                <Providers>
-                    <Header />
-                    <main>{children}</main>
-                    <Footer />
-                </Providers>
-                <Analytics />
-                <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
+                <Header />
+                <main>{children}</main>
+                <Footer />
             </body>
         </html>
     )

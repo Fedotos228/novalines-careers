@@ -1,16 +1,16 @@
-import { getJobBySlug } from '@/utils/getJobBySlug'
+import { getJob } from '@/lib/content'
 
 type JobbsSinglePropsType = {
-    params: {
+    params: Promise<{
         slug: string
-    }
+    }>
 }
 
 export async function generateMetadata({ params }: JobbsSinglePropsType) {
-    const { slug } = params
+    const { slug } = await params
 
-    const jobsData = await getJobBySlug(slug)
-    const job = jobsData.data.attributes
+    const job = getJob(slug)
+    if (!job) return {}
 
     return {
         title: `${job.title} | Cariere Novalines`,

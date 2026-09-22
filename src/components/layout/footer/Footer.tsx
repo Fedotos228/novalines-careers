@@ -1,4 +1,3 @@
-import Map from '@/components/elements/Map'
 import { Onest } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -65,13 +64,12 @@ export default function Footer() {
                 <div className="text-center">
                     <h2>Write</h2>
                     <Link
-                        href="mailto:jobs@novalines.com"
+                        href="mailto:careers@novalines.com"
                         className="text-muted mt-2 text-sm lg:text-base block">
-                        jobs@novalines.com
+                        careers@novalines.com
                     </Link>
                 </div>
             </div>
-            <Map />
             <div className={`${onest.className} flex items-center justify-center flex-wrap gap-5 sm:gap-20 bg-[#202020] py-7 px-4`} >
                 <p className='text-white opacity-50'>
                     Copyright © 2024. All rights reserved.
