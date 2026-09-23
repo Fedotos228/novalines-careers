@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: JobbsSinglePropsType) {
     const job = getJob(slug)
     if (!job) return {}
 
-    const title = `${job.title} – Chicago, IL`
+    const title = `${job.title} - Chicago, IL`
     const description = `Non-driving job at Nova Lines in Chicago, IL. ${job.tagline} ${job.description}`
 
     return {

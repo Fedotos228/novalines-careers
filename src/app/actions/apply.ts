@@ -63,7 +63,7 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
       from: { name: 'Nova Lines Careers Website', address: SMTP_USER },
       to: APPLICATIONS_TO,
       replyTo: { name: fullName, address: email },
-      subject: `Application: ${position} – ${fullName}`,
+      subject: `Application: ${position} - ${fullName}`,
       text: [
         `Name: ${fullName}`,
         `Email: ${email}`,
