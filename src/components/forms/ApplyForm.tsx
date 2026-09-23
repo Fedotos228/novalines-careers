@@ -1,8 +1,9 @@
 'use client'
 
 import { ApplyState, submitApplication } from '@/app/actions/apply'
-import { Loader2 } from 'lucide-react'
-import { startTransition, useActionState } from 'react'
+import { RESUME_ACCEPT, resumeError } from '@/constants/resume'
+import { FolderOpen, Loader2 } from 'lucide-react'
+import { startTransition, useActionState, useState } from 'react'
 import Button from '../ui/Button'
 
 const HR_EMAIL = 'careers@novalines.com'
@@ -30,11 +31,21 @@ type Props = {
 
 export default function ApplyForm({ positions, defaultPosition }: Props) {
     const [state, formAction, pending] = useActionState(submitApplication, initialState)
+    const [fileName, setFileName] = useState<string>()
+    const [fileError, setFileError] = useState<string | null>(null)
+
+    const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0]
+        setFileName(file?.name)
+        setFileError(file ? resumeError(file) : null)
+    }
 
     // Submitting manually keeps the typed values if the server returns an error
     // (a plain `action={formAction}` would reset the form after every submit).
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        // Oversized files would be rejected before reaching the action, so stop them here.
+        if (fileError) return
         const data = new FormData(e.currentTarget)
         data.set('page', window.location.href)
         startTransition(() => formAction(data))
@@ -89,13 +100,32 @@ export default function ApplyForm({ positions, defaultPosition }: Props) {
                 </select>
             </label>
 
+            <div className="sm:col-span-2">
+                <span className={labelClass}>Resume</span>
+                <label
+                    className={`relative flex flex-col items-center justify-center gap-1 rounded-xl border border-dashed p-6 text-center cursor-pointer transition-colors hover:border-blaze-500 focus-within:border-blaze-500 ${fileError ? 'border-red-500' : 'border-border'}`}>
+                    <FolderOpen className="mb-1" />
+                    <span className="font-medium">{fileName ?? 'Upload your resume or drag & drop it here'}</span>
+                    <span className="text-sm text-muted-foreground">PDF, DOC or DOCX, up to 4MB</span>
+                    <input
+                        type="file"
+                        name="resume"
+                        accept={RESUME_ACCEPT}
+                        required
+                        onChange={onFileChange}
+                        className="absolute inset-0 opacity-0 cursor-pointer"
+                    />
+                </label>
+                {fileError && <p role="alert" className="text-sm text-red-500 mt-1">{fileError}</p>}
+            </div>
+
             <label className="sm:col-span-2 flex items-start gap-3 text-xs font-bold uppercase italic text-muted-foreground">
                 <input type="checkbox" name="consent" required className="mt-0.5 size-4 shrink-0 accent-blaze-500" />
                 I agree to the Terms &amp; Conditions and Privacy Policy, provide my electronic signature, and
                 consent to receive automated marketing calls, text messages or emails.
             </label>
 
-            <Button type="submit" variant="primary" className="sm:col-span-2" disabled={pending}>
+            <Button type="submit" variant="primary" className="sm:col-span-2" disabled={pending || !!fileError}>
                 {pending ? (
                     <>
                         <Loader2 size={20} className="animate-spin" /> Sending

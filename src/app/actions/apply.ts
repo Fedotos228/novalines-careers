@@ -1,5 +1,6 @@
 'use server'
 
+import { resumeError } from '@/constants/resume'
 import { getJobs } from '@/lib/content'
 import nodemailer from 'nodemailer'
 
@@ -36,6 +37,13 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
     return { status: 'error', message: 'Please choose a position from the list.' }
   }
 
+  const resume = formData.get('resume')
+  if (!(resume instanceof File) || resume.size === 0) {
+    return { status: 'error', message: 'Please attach your resume.' }
+  }
+  const resumeProblem = resumeError(resume)
+  if (resumeProblem) return { status: 'error', message: resumeProblem }
+
   const { SMTP_USER, SMTP_PASSWORD, APPLICATIONS_TO } = process.env
   if (!SMTP_USER || !SMTP_PASSWORD || !APPLICATIONS_TO) {
     console.error('Application email is not configured: set SMTP_USER, SMTP_PASSWORD and APPLICATIONS_TO')
@@ -64,6 +72,9 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
         `Position: ${position}`,
         `Applied from: ${page}`,
       ].join('\n'),
+      attachments: [
+        { filename: resume.name, content: Buffer.from(await resume.arrayBuffer()), contentType: resume.type },
+      ],
     })
   } catch (error) {
     console.error('Failed to send application email', error)
