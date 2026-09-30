@@ -2,26 +2,26 @@ import { Job } from './types'
 
 // Source: “Vacansii Shop.docx” (Nova Lines social media recruitment profiles).
 export const jobs: Job[] = [
-  {
-    slug: 'shop-manager',
-    title: 'Shop Manager',
-    tagline: 'Lead the Shop. Build the Team. Drive Performance.',
-    description: "As Shop Manager, you'll lead the daily operation of our maintenance facility, ensuring repairs are completed safely, efficiently and to the highest quality standards.",
-    responsibilities: [
-      'Lead daily shop operations',
-      'Coordinate workflow and repair priorities',
-      'Develop supervisors and technicians',
-      'Monitor productivity, quality and turnaround time',
-      'Partner with Operations and Parts',
-      'Drive continuous improvement',
-    ],
-    idealCandidate: [
-      'Leadership experience in fleet or heavy-duty maintenance',
-      'Strong leadership and communication',
-      'Technical knowledge of diesel equipment',
-      'Customer-focused mindset',
-    ],
-  },
+  // {
+  //   slug: 'shop-manager',
+  //   title: 'Shop Manager',
+  //   tagline: 'Lead the Shop. Build the Team. Drive Performance.',
+  //   description: "As Shop Manager, you'll lead the daily operation of our maintenance facility, ensuring repairs are completed safely, efficiently and to the highest quality standards.",
+  //   responsibilities: [
+  //     'Lead daily shop operations',
+  //     'Coordinate workflow and repair priorities',
+  //     'Develop supervisors and technicians',
+  //     'Monitor productivity, quality and turnaround time',
+  //     'Partner with Operations and Parts',
+  //     'Drive continuous improvement',
+  //   ],
+  //   idealCandidate: [
+  //     'Leadership experience in fleet or heavy-duty maintenance',
+  //     'Strong leadership and communication',
+  //     'Technical knowledge of diesel equipment',
+  //     'Customer-focused mindset',
+  //   ],
+  // },
   {
     slug: 'shop-supervisor',
     title: 'Shop Supervisor',
