@@ -2,6 +2,7 @@ import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/HeaderDynamic'
 import { DinNextLtProFont } from '@/font'
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/constants/site'
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -67,6 +68,7 @@ export default function RootLayout({
                 <Header />
                 <main>{children}</main>
                 <Footer />
+                <Analytics />
             </body>
         </html>
     )
