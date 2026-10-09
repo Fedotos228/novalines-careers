@@ -193,6 +193,25 @@ export const jobs: Job[] = [
     ],
   },
   {
+    slug: 'operations-support-assistant',
+    title: 'Operations Support Assistant',
+    tagline: 'Keep Drivers and Departments Connected.',
+    description: "You'll support drivers and coordinate with maintenance, safety and orientation to keep flatbed operations running smoothly and in compliance.",
+    responsibilities: [
+      'Interact with and coach drivers',
+      'Coordinate between drivers and departments',
+      'Support maintenance and repair requests',
+      'Follow DOT and FMCSA operational requirements',
+    ],
+    idealCandidate: [
+      'Experience interacting with drivers, including coaching when necessary',
+      'Understanding of trucking operations and compliance (flatbed preferred)',
+      'Knowledge of DOT and FMCSA operational requirements',
+      'Experience coordinating between drivers and departments (maintenance and repairs, safety, orientation, etc.)',
+      'Knowledge of truck and trailer equipment, maintenance and repairs (preferred)',
+    ],
+  },
+  {
     slug: 'safety-supervisor',
     title: 'Safety Supervisor',
     tagline: 'Lead Safety. Build Confidence.',
