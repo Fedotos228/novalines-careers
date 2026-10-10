@@ -192,6 +192,24 @@ export const jobs: Job[] = [
   //     'Professionalism',
   //   ],
   // },
+    // {
+  //   slug: 'safety-supervisor',
+  //   title: 'Safety Supervisor',
+  //   tagline: 'Lead Safety. Build Confidence.',
+  //   description: "You'll lead the Safety team and strengthen our safety culture.",
+  //   responsibilities: [
+  //     'Supervise Safety Coordinators',
+  //     'Monitor safety performance',
+  //     'Coach team',
+  //     'Ensure compliance',
+  //   ],
+  //   idealCandidate: [
+  //     'Transportation safety experience',
+  //     'Leadership',
+  //     'FMCSA knowledge',
+  //     'Analytical skills',
+  //   ],
+  // },
   {
     slug: 'operations-support-assistant',
     title: 'Operations Support Assistant',
@@ -211,24 +229,7 @@ export const jobs: Job[] = [
       'Knowledge of truck and trailer equipment, maintenance and repairs (preferred)',
     ],
   },
-  {
-    slug: 'safety-supervisor',
-    title: 'Safety Supervisor',
-    tagline: 'Lead Safety. Build Confidence.',
-    description: "You'll lead the Safety team and strengthen our safety culture.",
-    responsibilities: [
-      'Supervise Safety Coordinators',
-      'Monitor safety performance',
-      'Coach team',
-      'Ensure compliance',
-    ],
-    idealCandidate: [
-      'Transportation safety experience',
-      'Leadership',
-      'FMCSA knowledge',
-      'Analytical skills',
-    ],
-  },
+
   {
     slug: 'safety-coordinator',
     title: 'Safety Coordinator',
