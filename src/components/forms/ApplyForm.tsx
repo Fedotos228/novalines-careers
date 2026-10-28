@@ -80,27 +80,6 @@ export default function ApplyForm({ positions, defaultPosition }: Props) {
                 <input type="tel" name="phone" placeholder="Phone" autoComplete="tel" required className={fieldClass} />
             </label>
 
-            <label className="sm:col-span-2">
-                <span className={labelClass}>Where did you hear about us?</span>
-                <select name="source" required defaultValue="" className={fieldClass}>
-                    <option value="" disabled>
-                        Where did you hear about us?
-                    </option>
-                    {SOURCES.map((source) => (
-                        <option key={source}>{source}</option>
-                    ))}
-                </select>
-            </label>
-
-            <label className="sm:col-span-2">
-                <span className={labelClass}>Which position are you interested in?</span>
-                <select name="position" required defaultValue={defaultPosition} className={fieldClass}>
-                    {positions.map((position) => (
-                        <option key={position}>{position}</option>
-                    ))}
-                </select>
-            </label>
-
             <fieldset className="sm:col-span-2 grid grid-cols-1 gap-3">
                 <legend className={`${labelClass} normal-case not-italic text-base`}>{EXPERIENCE_QUESTION}</legend>
                 {EXPERIENCE_OPTIONS.map((option) => (
@@ -112,6 +91,15 @@ export default function ApplyForm({ positions, defaultPosition }: Props) {
                     </label>
                 ))}
             </fieldset>
+
+            <label className="sm:col-span-2">
+                <span className={labelClass}>Which position are you interested in?</span>
+                <select name="position" required defaultValue={defaultPosition} className={fieldClass}>
+                    {positions.map((position) => (
+                        <option key={position}>{position}</option>
+                    ))}
+                </select>
+            </label>
 
             <div className="sm:col-span-2">
                 <span className={labelClass}>Resume</span>
