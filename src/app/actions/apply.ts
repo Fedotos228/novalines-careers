@@ -1,5 +1,6 @@
 'use server'
 
+import { EXPERIENCE_OPTIONS } from '@/constants/experience'
 import { resumeError } from '@/constants/resume'
 import { getJobs } from '@/lib/content'
 import nodemailer from 'nodemailer'
@@ -25,6 +26,7 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
   const phone = field(formData, 'phone')
   const source = field(formData, 'source')
   const position = field(formData, 'position')
+  const experience = field(formData, 'experience')
   const page = field(formData, 'page')
 
   if (!firstName || !lastName || !phone || !source || !formData.get('consent')) {
@@ -35,6 +37,10 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
   }
   if (!getJobs().some((job) => job.title === position)) {
     return { status: 'error', message: 'Please choose a position from the list.' }
+  }
+
+  if (!EXPERIENCE_OPTIONS.includes(experience)) {
+    return { status: 'error', message: 'Please select your years of experience.' }
   }
 
   const resume = formData.get('resume')
@@ -70,6 +76,7 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
         `Phone: ${phone}`,
         `Where did you hear about us: ${source}`,
         `Position: ${position}`,
+        `Years of experience in flatbed trucking and logistics: ${experience}`,
         `Applied from: ${page}`,
       ].join('\n'),
       attachments: [
