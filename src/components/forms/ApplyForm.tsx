@@ -3,6 +3,7 @@
 import { ApplyState, submitApplication } from '@/app/actions/apply'
 import { EXPERIENCE_OPTIONS, EXPERIENCE_QUESTION } from '@/constants/experience'
 import { RESUME_ACCEPT, resumeError } from '@/constants/resume'
+import { WILLING_ANSWERS, WILLING_QUESTION } from '@/constants/willing'
 import { FolderOpen, Loader2 } from 'lucide-react'
 import { startTransition, useActionState, useState } from 'react'
 import Button from '../ui/Button'
@@ -83,6 +84,18 @@ export default function ApplyForm({ positions, defaultPosition }: Props) {
             <fieldset className="sm:col-span-2 grid grid-cols-1 gap-3">
                 <legend className={`${labelClass} normal-case not-italic text-base`}>{EXPERIENCE_QUESTION}</legend>
                 {EXPERIENCE_OPTIONS.map((option) => (
+                    <label
+                        key={option}
+                        className="flex items-center justify-between rounded-xl border border-border p-4 cursor-pointer transition-colors hover:border-blaze-500 has-[:checked]:border-blaze-500">
+                        {option}
+                        <input type="radio" name="experience" value={option} required className="size-5 accent-blaze-500" />
+                    </label>
+                ))}
+            </fieldset>
+
+            <fieldset className="sm:col-span-2 grid grid-cols-1 gap-3">
+                <legend className={`${labelClass} normal-case not-italic text-base`}>{WILLING_QUESTION}</legend>
+                {WILLING_ANSWERS.map((option) => (
                     <label
                         key={option}
                         className="flex items-center justify-between rounded-xl border border-border p-4 cursor-pointer transition-colors hover:border-blaze-500 has-[:checked]:border-blaze-500">
