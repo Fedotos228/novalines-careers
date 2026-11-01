@@ -12,16 +12,6 @@ const HR_EMAIL = 'careers@novalines.com'
 
 const initialState: ApplyState = { status: 'idle', message: '' }
 
-const SOURCES = [
-    'Facebook',
-    'Instagram',
-    'LinkedIn',
-    'Google search',
-    'Job board',
-    'Friend or colleague',
-    'Other',
-]
-
 const labelClass = 'block text-sm font-bold uppercase italic mb-2'
 const fieldClass =
     'w-full border border-border rounded-xl p-3 outline-none bg-transparent transition-colors focus:border-blaze-500'
@@ -100,7 +90,7 @@ export default function ApplyForm({ positions, defaultPosition }: Props) {
                         key={option}
                         className="flex items-center justify-between rounded-xl border border-border p-4 cursor-pointer transition-colors hover:border-blaze-500 has-[:checked]:border-blaze-500">
                         {option}
-                        <input type="radio" name="experience" value={option} required className="size-5 accent-blaze-500" />
+                        <input type="radio" name="willing" value={option} required className="size-5 accent-blaze-500" />
                     </label>
                 ))}
             </fieldset>

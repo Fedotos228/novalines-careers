@@ -2,6 +2,7 @@
 
 import { EXPERIENCE_OPTIONS } from '@/constants/experience'
 import { resumeError } from '@/constants/resume'
+import { WILLING_ANSWERS, WILLING_QUESTION } from '@/constants/willing'
 import { getJobs } from '@/lib/content'
 import nodemailer from 'nodemailer'
 
@@ -24,12 +25,12 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
   const lastName = field(formData, 'last_name')
   const email = field(formData, 'email')
   const phone = field(formData, 'phone')
-  const source = field(formData, 'source')
   const position = field(formData, 'position')
   const experience = field(formData, 'experience')
+  const willing = field(formData, 'willing')
   const page = field(formData, 'page')
 
-  if (!firstName || !lastName || !phone || !source || !formData.get('consent')) {
+  if (!firstName || !lastName || !phone || !formData.get('consent')) {
     return { status: 'error', message: 'Please fill in all fields.' }
   }
   if (!EMAIL_RE.test(email)) {
@@ -41,6 +42,10 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
 
   if (!EXPERIENCE_OPTIONS.includes(experience)) {
     return { status: 'error', message: 'Please select your years of experience.' }
+  }
+
+  if (!WILLING_ANSWERS.includes(willing)) {
+    return { status: 'error', message: 'Please answer whether you can work full-time from our office.' }
   }
 
   const resume = formData.get('resume')
@@ -74,9 +79,9 @@ export async function submitApplication(_prev: ApplyState, formData: FormData): 
         `Name: ${fullName}`,
         `Email: ${email}`,
         `Phone: ${phone}`,
-        `Where did you hear about us: ${source}`,
         `Position: ${position}`,
         `Years of experience in flatbed trucking and logistics: ${experience}`,
+        `${WILLING_QUESTION} ${willing}`,
         `Applied from: ${page}`,
       ].join('\n'),
       attachments: [
